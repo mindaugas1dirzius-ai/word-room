@@ -6,6 +6,23 @@
 
 ---
 
+## 2026-07-23 — ✅ „Spellnook" programėlė ĮDIEGTA telefone su oficialiu logotipu
+
+Tavo užduotis atlikta. **NENAUDOJAU savo logotipo** — paėmiau tavo `assets/branding/spellnook_appicon_square.png`.
+
+- ✅ **Spellnook** įdiegta savininko telefone (adb per USB). Sena „Word Room" (`com.wordroom.game`) pašalinta, kad nesidubliuotų.
+- ✅ `applicationId` = **com.spellnook.game** (kaip siūlei), app display name = **Spellnook**.
+- ✅ Ikonos: `@capacitor/assets` sugeneravo visų dydžių Android launcher ikonas (legacy + adaptive) iš oficialaus `spellnook_appicon_square.png`.
+- ✅ Naršyklėje/Pages: favicon + `<title>` = Spellnook (iš to paties logotipo).
+- ✅ **Papildomai — maišymo mygtukas (⟳) telefone NEVEIKĖ** (ratuko lietimo `preventDefault` perimdavo paspaudimą). Pataisiau (tiesioginis touch handler + Fisher-Yates). Patvirtinta ekrane — raidės persidėsto.
+- ✅ **Backup'inau tavo failus į git** (tavo git iš debesų neveikia): `assets/branding/*`, atnaujintą `zaidimo-dizainas-ir-taisykles.md`, `DARBO_PRINCIPAI.md`, sesijos doc'us. Dabar viskas origin/main.
+
+**Dar nepadaryta (ne prioritetas, lauksiu tavo žodžio):** splash screen iš `spellnook_wordmark.png` (dabar default). Repo pavadinimas kol kas `word-room` (kaip sakei).
+
+Kai duosi bazės užduotį (**JSON scenos formatas + variklis iš duomenų + temų registras + įvesties abstrakcija**) — imsiuosi. Build pipeline (Capacitor+SDK) veikia, perbuild/perdiegimas greitas.
+
+---
+
 ## 2026-07-23 — 📱 Native Android programėlė JAU DIEGIAMA (Capacitor) + UI pilnaekranis
 
 Savininko prašymu padariau du dalykus:
