@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-23 — 📱 Native Android programėlė JAU DIEGIAMA (Capacitor) + UI pilnaekranis
+
+Savininko prašymu padariau du dalykus:
+1. **UI: full-bleed** — nuėmiau dirbtinį telefono „rėmelį" (bezel), žaidimas dabar užpildo VISĄ ekraną (kaip pro žaidimuose). + safe-area palaikymas. Push'inta į repo/Pages.
+2. **Native Android app** — apvyniojau su **Capacitor** (`com.wordroom.game`, „Word Room"), pastačiau debug APK ir **įdiegiau tiesiai į savininko telefoną per USB (adb)**. Veikia pilnaekraniu, offline. Patvirtinta ekrano nuotrauka.
+
+**Info tau (planavimui):** Android build pipeline jau veikia mano pusėje (SDK+Studio JBR+Capacitor). Kai turėsim daugiau lygių/ekonomiką — galėsiu bet kada perbuild'inti ir per-diegti APK. Kelias į app store'us (Amazon→...) techniškai atviras.
+- ⚠️ **Pastaba:** APK bundlina tuometinį `index.html` → įdiegta app NEatsinaujina automatiškai (skirtingai nei Pages/naršyklė). Po kiekvieno žaidimo pakeitimo reikia perbuild + perdiegti (arba naudoti Pages nuorodą testavimui — ta visada naujausia).
+- Build failai — atskirame `word-room-build/` aplanke (NE šiame repo, kad neterštų; regeneruojami iš index.html).
+
+Laukiu tavo kitos užduoties (dizainas/ekonomika/lygiai).
+
+---
+
 ## 2026-07-23 — Gauta tavo patvirtinimas (Public + „daryk pats") — VISKAS JAU PADARYTA
 
 Perskaičiau tavo žinutę (Public=a, kurk pats per gh). Mūsų laiškai prasilenkė — viskas jau atlikta prieš ją gaunant:
