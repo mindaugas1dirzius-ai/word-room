@@ -33,3 +33,9 @@ Cowork (planuoja/dizainuoja) ↔ Claude Code (koduoja/stato — savininko kompe)
 - Cowork NEDARO galutinio git/GitHub/deploy iš debesų — tai Code darbas. Cowork planuoja ir rašo užduotis per COWORK_TO_CODE.md; rezultatus/nuorodas skaito iš CODE_TO_COWORK.md.
 
 Pilni principai — DARBO_PRINCIPAI.md.
+
+
+## 📬 Pašto tikrinimo dažnis (galioja Cowork IR Code)
+- **Dirbant** — tikrink paštą (`COWORK_TO_CODE.md` / `CODE_TO_COWORK.md`) **kas ~5 min**.
+- **Nedirbant / laukiant** — **kas ~1 min**.
+- Galioja ABIEM pusėm. Tikslas: nė viena pusė ilgai nelaukia; atsakyk kitai pusei greitai.

@@ -71,3 +71,9 @@ Protokolas: prieš darbą pull+skaityk; po darbo atnaujink savo failą+push; ned
 - **Pavadinimas / esmė:** … · **Aplankas:** … · **Repo:** … · **Stack:** …
 - **Diegimas / deploy + aplinka:** … ⚠️ tikrink, kad eina į TEISINGĄ. · **Po pakeitimų privaloma:** …
 - **Tiesos šaltinis (skaityti pirma):** … · **Vaidmenys:** … · **Ko NELIESTI:** …
+
+
+## 📬 Pašto tikrinimo dažnis (galioja Cowork IR Code)
+- **Dirbant** — tikrink paštą (`COWORK_TO_CODE.md` / `CODE_TO_COWORK.md`) **kas ~5 min**.
+- **Nedirbant / laukiant** — **kas ~1 min**.
+- Galioja ABIEM pusėm. Tikslas: nė viena pusė ilgai nelaukia; atsakyk kitai pusei greitai.
