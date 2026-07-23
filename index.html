@@ -305,8 +305,8 @@
   function peek(w){ const f=FOCUS[w]; focusing=true;
     room.style.transition='transform 900ms cubic-bezier(.6,.01,.15,1)';
     const mx=(50-f.x)*f.z, my=(50-f.y)*f.z; room.style.transform='translate('+(mx*0.55)+'%,'+(my*0.55)+'%) scale('+f.z+')';
-    ring.style.left=(f.x-11)+'%'; ring.style.top=(f.y-9)+'%'; ring.style.width='22%'; ring.style.height='20%'; ring.classList.add('show');
-    setTimeout(()=>{ room.style.transform=''; ring.classList.remove('show'); },1500);
+    setTimeout(()=>react(w,f),500);   /* ZOOM help now lights up the object too (like a find) */
+    setTimeout(()=>{ room.style.transform=''; },1500);
     setTimeout(()=>{ focusing=false; },2500); }
   document.getElementById('revealBtn').addEventListener('click',()=>{ const cand=OBJECTS.filter(w=>!found.has(w)); if(!cand.length)return; if(coins<ZOOM_COST){ sBad(); return; } coins-=ZOOM_COST; setCoins(); const w=cand[zoomIx%cand.length]; zoomIx++; peek(w); sBonus(); });
   document.getElementById('nextBtn').addEventListener('click',()=>{ document.getElementById('complete').classList.remove('show'); found.clear(); Object.keys(revealed).forEach(k=>delete revealed[k]); zoomIx=0; focusing=false; room.style.transform=''; ring.classList.remove('show'); document.querySelectorAll('.confetti').forEach(c=>c.remove()); renderObjectives(); });
