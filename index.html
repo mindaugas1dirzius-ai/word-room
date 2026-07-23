@@ -70,7 +70,8 @@
   @keyframes sparkUp{ 0%{opacity:0;transform:translateY(0) scale(.5);} 30%{opacity:1;}
                       100%{opacity:0;transform:translateY(-46px) scale(1);} }
 
-  .ring{ position:absolute; border:2px solid var(--gold); border-radius:16px;
+  /* Object highlight frame removed per owner request — the zoom + reaction stay, no gold frame. */
+  .ring{ display:none !important; position:absolute; border:2px solid var(--gold); border-radius:16px;
          box-shadow:0 0 28px rgba(255,206,122,.85); opacity:0; transform:scale(.7);
          transition:opacity .4s, transform .5s; pointer-events:none; }
   .ring.show{ opacity:1; transform:scale(1); }
