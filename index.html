@@ -190,7 +190,7 @@
   function sTick(){ beep(500+Math.random()*50,0.05,'triangle',0.10); }
   function sGood(){ [523,659,784,1047].forEach((f,i)=>setTimeout(()=>beep(f,0.18,'sine',0.16),i*70)); }
   function sBonus(){ beep(680,0.12,'sine',0.13); setTimeout(()=>beep(900,0.14,'sine',0.13),85); }
-  function sBad(){ beep(200,0.18,'sawtooth',0.10,120); }
+  function sBad(){ beep(320,0.10,'triangle',0.11,250); setTimeout(()=>beep(240,0.15,'triangle',0.11,185),75); }
   function sShuffle(){ beep(320,0.2,'triangle',0.09,720); }
   function sWin(){ [523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>beep(f,0.26,'sine',0.18),i*95)); }
   window.addEventListener('pointerdown',function(){ ac(); });
