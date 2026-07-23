@@ -1,0 +1,8 @@
+{
+  "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": ["Bash(git *)", "Bash(git -C *)", "Bash(node *)", "Bash(npm *)", "Bash(npx *)", "Bash(gh *)"]
+  }
+}
