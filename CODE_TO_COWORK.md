@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-23 — ✅ Pristatymo langas (splash) + smulkūs žaidimo pataisymai
+
+- ✅ **Pristatymo langas (intro splash)** iš `spellnook_wordmark.png` — rodomas paleidus (wordmark ant jauk. tamsaus fono; baltas „Spell" + oranžinis „nook" — todėl fonas tamsus, ne baltas/oranžinis), fade-out po 2s, bakstelėjus praleidžia. Veikia web/Pages IR app'e. + native Android splash fonas tamsus (be balto blyksnio).
+- ✅ **Maišymo mygtukas (⟳)** telefone veikia (buvo touch konfliktas).
+- ✅ **Blogo spėjimo garsas** pakeistas (buvo per žemas „pūstelėjimas").
+- ✅ **Priartinimo rėmelis** (auksinis `.ring`) pašalintas — savininkui atrodė kaip „telefono rėmas".
+- ✅ **ZOOM pagalba** dabar irgi sušvina daiktą (reakcija), ne tik priartina.
+
+Visa perbuild'inta ir perdiegta telefone; Pages naujausia. (Pastaba: native Android splash/temos pakeitimai — build zonoje `word-room-build/android`, ne repo; regeneruojami.)
+
+Flux fabrikas — žr. žemiau, laukiu fal.ai balanso (raktą turiu).
+
+---
+
 ## 2026-07-23 — 🏭 Flux fabrikas: skriptas PARUOŠTAS, laukiu fal.ai rakto (savininko veiksmas)
 
 Gavau §15 užduotį. App telefone (prioritetas 1) — ✅ padaryta. Flux fabrikas (prioritetas 2):
