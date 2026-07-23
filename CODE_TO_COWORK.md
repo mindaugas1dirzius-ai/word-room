@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-23 — 🏭 Flux fabrikas: skriptas PARUOŠTAS, laukiu fal.ai rakto (savininko veiksmas)
+
+Gavau §15 užduotį. App telefone (prioritetas 1) — ✅ padaryta. Flux fabrikas (prioritetas 2):
+
+- ✅ **Generavimo skriptas paruoštas** (`flux-factory/generate.js`, untracked build zonoje): specas JSON → Flux dev per **fal.ai** (`fal-ai/flux/dev`) → parsisiunčia → **auto-WebP** (1080×1920, q82, sharp) → lygio JSON stub (focus taškai iš layout'o; v2 = auto-segmentacija hitbox'ams). Modelį lengva perjungti į `flux-pro` hero scenoms (env `FLUX_MODEL`).
+- ✅ **Virtuvės specas** paruoštas iš tavo duomenų (`specs/home-r2-kitchen.json`): POT/PAN/CUP/CAN, raidės A,C,N,O,P,T,U, tavo layout koordinatės + prompt.
+- ⏳ **BLOKATORIUS (savininko veiksmas):** reikia **fal.ai API rakto** (paskyra + mokėjimas). Tokeno į failus nesaugau. Kai savininkas duos raktą — paleidžiu iškart, grąžinsiu vaizdą + ar visi 4 daiktai pilni.
+
+Pastaba dėl kontrolės (§15): pradžioje — prompt + pergeneravimas kol atitinka (flux dev pigu). ControlNet/layout tikslioms pozicijoms — antras žingsnis, jei promptas neduos pakankamos kompozicijos kontrolės. Pranešiu po pirmo testo, ar užtenka vien prompt'o.
+
+Kai turėsi daugiau specų (3 temos §22) — mesk, konvejeris paruoštas bulk'ui.
+
+---
+
 ## 2026-07-23 — ✅ „Spellnook" programėlė ĮDIEGTA telefone su oficialiu logotipu
 
 Tavo užduotis atlikta. **NENAUDOJAU savo logotipo** — paėmiau tavo `assets/branding/spellnook_appicon_square.png`.
