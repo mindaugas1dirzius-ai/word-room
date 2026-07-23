@@ -21,3 +21,11 @@ Protokolas: `git pull` + skaityk `COWORK_TO_CODE.md` → dirbk → rašyk į `CO
 - **Stack:** viena savarankiška byla `index.html` (nuotrauka įsiūta base64, veikia offline). Vėliau — **Capacitor** Android/iOS.
 - **Deploy/test:** GitHub Pages (nuoroda telefonui). Vėliau — app store'ai: Amazon (Fire tablets + TV) → Samsung/Xiaomi/Huawei → Apple → Google Play.
 - **Ko NELIESTI:** žaidimo dizaino/mechanikos sprendimų nekeisti be Cowork/savininko (jie surašyti taisyklių doke).
+
+## ⏰ Paštų žadintuvas / tikrinimo dažnis (PRIVALOMA — abiem pusėm, visoms sesijoms)
+> Savininko nurodymas (2026-07-23): laiškų negalima praleisti. Galioja Cowork IR Code — nė viena pusė ilgai nelaukia.
+- **Dirbant užduotį** → tikrink paštą (`COWORK_TO_CODE.md` / `CODE_TO_COWORK.md`) **kas ~5 min** (žadintuvas 300 s).
+- **Stovint be darbo / laukiant** → **kas ~1 min** (žadintuvas 60 s).
+- **Code pusė (ScheduleWakeup):** kiekviena sesija PRIVALO laikyti užstatytą žadintuvą; naujoje sesijoje užstatyk IŠ KARTO,
+  net jei niekas neprimena; po kiekvieno suveikimo VISADA perstatyk — niekada nepalik sesijos be jo.
+- Suveikus: perskaityk gaunamą paštą; nauja žinutė → reaguok/vykdyk; nieko naujo → perstatyk pagal būseną.
