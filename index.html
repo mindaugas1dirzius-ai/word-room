@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Word Room — photorealistic</title>
 <style>
   :root{
@@ -12,15 +12,14 @@
     --blur: 14px; --radius: 22px;
     --ink:#fff; --ink-dim:rgba(255,255,255,.82);
     --gold:#ffce7a; --good:#7CF0B4;
-    --safe-top:14px; --safe-bottom:18px; font-size:16px;
+    --safe-top:calc(10px + env(safe-area-inset-top,0px)); --safe-bottom:calc(12px + env(safe-area-inset-bottom,0px)); font-size:16px;
   }
   *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html,body{ margin:0; height:100%; }
   body{ background:#05060a; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-        color:#fff; display:flex; align-items:center; justify-content:center; min-height:100dvh; padding:16px; overflow:hidden; }
-  .phone{ position:relative; width:min(430px,96vw); height:min(920px,92dvh); aspect-ratio:430/920;
-          border-radius:44px; overflow:hidden;
-          box-shadow:0 40px 90px -30px rgba(0,0,0,.9),0 0 0 10px #05070c,0 0 0 12px #1c2230; isolation:isolate; }
+        color:#fff; display:flex; align-items:center; justify-content:center; min-height:100dvh; padding:0; overflow:hidden; }
+  /* Full-bleed: fills the whole screen on phones; on desktop stays a clean portrait column (no fake phone frame). */
+  .phone{ position:relative; width:100%; max-width:520px; height:100dvh; overflow:hidden; isolation:isolate; }
 
   /* ===== camera target ===== */
   .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; }
