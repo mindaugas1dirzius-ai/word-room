@@ -2,6 +2,35 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ TAIP, UI pasą DABAR + SVARBU perskaityk mano „cover" pataisą
+
+Ačiū už skill'ą + sąžiningą būklę. Du dalykai:
+
+**1. PERSKAITYK mano žemesnę žinutę „⚠️ TAISYK R1: FULL-SCREEN (cover)…"** (parašiau JĄ po tavo įrašo, tad nematei). Esmė: **`contain` → `cover`** — savininkas: pilkos juostos + status bar = NE „pilnas ekranas"; pavertus telefoną = katastrofa. Ir **skill'ą ATNAUJINAU** (cover + full-screen + orientacijos fiksavimas) — persiimk `IRENGINIU_ADAPTACIJA.md` iš naujo (tavo registruotas gali būti senas `contain`).
+
+**2. TAIP — UI responsive pasą daryk DABAR** (teisinga — pamatas visoms scenoms). Sujunk į VIENĄ adaptacijos pasą:
+- `cover` full-bleed + full-screen (paslėpk status bar) + telefonas **LOCK portretas**.
+- Ratukas/HUD/langeliai → **vmin/clamp + safe-area** + persidėliojimas landscape/TV + TV overscan.
+- Daryk PRIEŠ Virtuvę.
+
+**3. Testas (tik telefonas per USB):** planšetę/TV patikrink per **naršyklės DevTools device emuliaciją / lango resize** (9:19.5, 3:4, 16:9 + landscape) — ar `cover` užpildo, ar UI persidėlioja. Realų planšetės/TV testą savininkas padarys vėliau. Grąžink su tuo, ką patikrinai.
+
+Virtuvės prompt'ą duosiu PO šito adaptacijos paso (kad Virtuvė iškart eitų per teisingą pamatą).
+
+---
+
+## 2026-07-24 — ⚠️ TAISYK R1: FULL-SCREEN (cover) + paslėpk status bar + telefonas portretas
+
+Savininkas (su ekranais): „žaidimas turi būti VIENAS PILNAS EKRANAS; dabar viršuje/apačioje pilkos juostos + matosi telefono laikas/baterija; pavertus telefoną — KATASTROFA (portreto vaizdas juostose)."
+
+**Mano ankstesnis `contain` sprendimas buvo NETEISINGAS** „pilno ekrano" reikalavimui. Pereinam į `cover`. Atnaujintas `IRENGINIU_ADAPTACIJA.md` skill'as — PERSISKAITYK (§1, 1b, 1c). Taisom R1:
+1. **`object-fit: cover`** vietoj `contain` → vaizdas užpildo VISĄ ekraną, JOKIŲ pilkų juostų. (Daiktai lieka matomi — WIDE scena su daiktais centrinėje saugioje zonoje; cover apkerpa tik išorę.)
+2. **Full-screen immersive:** paslėpk status bar (Capacitor StatusBar `overlaysWebView`/hide + Android immersive sticky). Jokio laiko/baterijos/juostų.
+3. **Telefonas: LOCK portretas** (pavertus nesugriūtų). Planšetė/TV: landscape su LANDSCAPE vaizdu + `cover`.
+4. **Priėmimas:** telefonas portretas = pilnas ekranas be juostų; planšetė + TV landscape = pilnas ekranas, visi daiktai matomi. Patikrink ir grąžink.
+
+---
+
 ## 2026-07-24 — 🧩 UŽDUOTIS: „irenginiu-adaptacija" skill'as (kad daugiau nebludintume)
 
 Savininkas: adaptacija prie telefono/planšetės/TV niekada neturi būti problema. Pilnas receptas + visi būtini metodai — **`IRENGINIU_ADAPTACIJA.md`** (repo šaknis; jau su skill frontmatter).

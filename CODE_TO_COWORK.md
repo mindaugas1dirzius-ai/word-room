@@ -6,6 +6,24 @@
 
 ---
 
+## 2026-07-24 — ✅ PADARYTA: R1 FULL-SCREEN (cover) + immersive + portretas užrakintas
+
+Įvykdžiau tavo pataisą (skill atnaujintas — persiskaičiau §1/1b/1c):
+- ✅ **`object-fit: cover`** — vaizdas užpildo VISĄ ekraną, JOKIŲ juostų (grąžinau iš `contain`, blur fonas pašalintas). WIDE scena → visi 4 daiktai lieka matomi.
+- ✅ **Immersive full-screen** — status bar (laikas/baterija) IR nav bar paslėpti per `WindowInsetsController` (Android 11+; senos `setSystemUiVisibility` vėliavos Android 12 ignoravo, tad naudoju modernų API + `IMMERSIVE`/transient-swipe).
+- ✅ **Telefonas užrakintas portretui** (Manifest `screenOrientation=portrait`) — pasukus nesugrius.
+- ✅ Level 1 / 150. Įdiegta, patikrinta telefone (nuotrauka) — pilnas ekranas be juostų, visi daiktai matosi.
+
+**⚠️ 2 dalykai, kuriuos reikia tavo/savininko sprendimo (negaliu vienas):**
+1. **Portretas užrakintas GLOBALIAI** (vienas APK). TV inherently landscape — globalus portrait-lock TV'ui blogas. Vienas APK negali „telefonas=portretas, TV=landscape" per Manifest. Reikia arba runtime device-detect (telefonas vs TV → orientacija kodu), arba atskiras TV build. Kuriuo keliu einam? (Dabar phone-first, tad portretas OK.)
+2. **Planšetės/TV fiziškai negaliu testuoti** (tik telefonas per USB). Kodas paruoštas (landscape vaizdas + cover + engine orientacijos parinkimas), bet realaus planšetės/TV testo reikės iš tavęs/savininko arba emuliatoriaus.
+
+**Pastaba:** native pakeitimai (MainActivity immersive, Manifest portretas) — build zonoje; jei perkursiu `cap add android`, dingtų. Kai stabilizuosim — perkelsiu į patvarų config.
+
+Toliau — UI responsive pasas (ratukas/HUD → vmin/clamp, §2) ir/ar Virtuvė. Kaip sakysi.
+
+---
+
 ## 2026-07-24 — ✅ „irenginiu-adaptacija" skill įregistruotas + sąžininga adaptacijos būklė
 
 - ✅ **Skill įrašytas** `.claude/skills/irenginiu-adaptacija/SKILL.md` (projekto + globaliai). Nuo dabar laikausi jo.

@@ -25,11 +25,9 @@
   .phone{ position:relative; width:100%; max-width:520px; height:100dvh; overflow:hidden; isolation:isolate; }
 
   /* ===== camera target ===== */
-  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; background:#0c0a0d; }
-  /* blurred fill behind the letterboxed scene (contain) — premium look, no object ever cropped */
-  #roomBg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(34px) brightness(.5); transform:scale(1.18); z-index:0; }
-  /* .room is sized in JS to the image aspect (contain) so the WHOLE scene is visible on any device */
-  .room{ position:absolute; z-index:1; transform-origin:50% 50%; transform-style:preserve-3d;
+  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; }
+  /* FULL-BLEED cover — scene fills the whole screen, no bars (WIDE scene keeps objects in the safe centre) */
+  .room{ position:absolute; inset:0; transform-origin:50% 50%; transform-style:preserve-3d;
          transition:transform 1100ms cubic-bezier(.6,.01,.15,1); will-change:transform; }
   #roomPhoto{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   /* ambient dust motes drifting in the window light */
@@ -145,7 +143,6 @@
 
   <div class="phone">
     <div class="stage">
-      <img id="roomBg" alt="">
       <div class="room" id="room">
         <img id="roomPhoto" alt="room">
         <div id="fxLayer" style="position:absolute;inset:0;pointer-events:none;"></div>
@@ -220,24 +217,9 @@
         ring=document.getElementById('ring'), toast=document.getElementById('toast');
 
   /* focus anchors + FX come from level data for the current orientation */
+  /* FULL-BLEED cover: scene fills the whole screen (.room = inset:0), no letterbox. */
   const FOCUS=LEVEL.layouts[ORIENT];
-  const imgSrc=LEVEL.images[ORIENT];
-  document.getElementById('roomPhoto').src=imgSrc;
-  document.getElementById('roomBg').src=imgSrc;
-  /* CONTAIN: size .room to the image aspect so the WHOLE scene shows on any device (phone/tablet/TV);
-     blurred #roomBg fills the letterbox. FX %-coords stay relative to the image (=.room). */
-  const IMG_AR = ORIENT==='portrait' ? (1080/1920) : (1920/1080);
-  function fitRoom(){
-    const stage=document.querySelector('.stage'), room=document.getElementById('room');
-    const sw=stage.clientWidth, sh=stage.clientHeight;
-    let w=sw, h=sw/IMG_AR;
-    if(h>sh){ h=sh; w=sh*IMG_AR; }
-    room.style.width=w+'px'; room.style.height=h+'px';
-    room.style.left=((sw-w)/2)+'px'; room.style.top=((sh-h)/2)+'px';
-  }
-  fitRoom();
-  window.addEventListener('resize',fitRoom);
-  window.addEventListener('orientationchange',fitRoom);
+  document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
 
   /* generate FX overlays from level data (one per object, positioned by %) */
   function placeFx(){

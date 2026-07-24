@@ -7,9 +7,18 @@ description: Spellnook — kaip padaryti, kad žaidimas (vaizdas + UI) TOBULAI p
 
 **Principas:** adaptacijos logika parašoma VIENĄ kartą variklyje → paskui KIEKVIENA scena/ekranas prisitaiko automatiškai. Jokio darbo per sceną. Deterministinis kodas (NE AI agentas — jis nepatikimas ir brangus).
 
-## 1. Vaizdo talpinimas
-- **`object-fit: contain`** — visas vaizdas VISADA matomas, niekas nenukerpama jokiame ekrane. Letterbox juostas užpildo **išblukintas to paties vaizdo fonas** → atrodo premium (kaip IG/YouTube).
-- **Dvi versijos:** portretas 1080×1920 (telefonas / planšetė portrete) + landscape 1920×1080 (TV / landscape). Variklis parenka pagal orientaciją/aspect.
+## 1. Vaizdo talpinimas — FULL-BLEED (vienas pilnas ekranas)
+- **`object-fit: cover`** — vaizdas UŽPILDO VISĄ ekraną, **JOKIŲ juostų** (savininko reikalavimas: „vienas pilnas ekranas"). NE `contain` (jis palieka juostas — NENAUDOTI).
+- Kad daiktai NEDINGTŲ apkerpant — scenos komponuojamos **WIDE, su visais daiktais CENTRINĖJE saugioje zonoje** (didelės paraštės nuo kraštų). Cover apkerpa tik išorę (sienų/grindų kraštus), ne daiktus.
+- **Dvi versijos:** portretas 1080×1920 (portreto įrenginiai) + landscape 1920×1080 (TV / planšetė landscape). Variklis parenka pagal orientaciją; `cover` užpildo.
+
+## 1b. Full-screen (immersive) — PRIVALOMA
+- **Paslėpk sistemos juostas** (status bar su laiku/baterija + navigaciją): Capacitor **StatusBar** (`overlaysWebView`/hide) + Android **immersive sticky**. Žaidimas = VISAS ekranas; jokio laiko/baterijos/pilkų juostų.
+
+## 1c. Orientacijos fiksavimas
+- **Telefonas: LOCK portretas** — pavertus NEsugriūtų (portreto vaizdas juostose = katastrofa). Žodžių žaidimas telefone = portretas.
+- **Planšetė:** abi orientacijos (naudoja atitinkamą vaizdą + `cover`).
+- **TV:** landscape (landscape vaizdas + `cover`).
 
 ## 2. Išdėstymas / UI (responsive)
 - Tik **santykiniai vienetai:** `vw/vh/vmin/vmax/%`, `clamp()`, flexbox/grid. JOKIŲ fiksuotų px pozicijų.
