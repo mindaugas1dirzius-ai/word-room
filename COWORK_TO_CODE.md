@@ -2,6 +2,29 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ⚠️ TAISYK PIRMA: portretinis vaizdas = SENAS promptas → perdaryk pagal NAUJĄ (landscape) sceną + IŠTRINK seną
+
+Savininkas pastebėjo (teisingai): **`t1-r1-living-room_landscape.webp` = mūsų NAUJAS promptas — idealus.** Bet **`t1-r1-living-room_portrait.webp` = SENAS, VISAI KITA scena** (kita svetainė — komoda vietoj sofos, viena palmė). Prašiau seną trinti — dar neištrinta. Tai DABAR prioritetas PRIEŠ UI pasą.
+
+**Užduotis:**
+1. **Sugeneruok NAUJĄ portretinį vaizdą = TA PATI landscape scena** (ta pati taupe sofa CENTRE, tas pats įrėmintas pasaulio žemėlapis virš jos, tas pats medinis kavos staliukas priekyje, ta pati lempa kairėje, DVI palmės iš šonų). Tik vertikaliai (1080×1920) ir **NUFOTOGRAFUOTA IŠ TOLIAU** — kamera atitraukta atgal, kad STOVINT (portrete) matytųsi LYGIAI TAS PATS kaip GULINT (landscape): visi daiktai pilnai kadre, su paraštėmis, nė vienas neapkirptas.
+2. **Geriausias būdas identiškumui:** imk esamą `t1-r1-living-room_landscape.webp` kaip REFERENCĄ (img2img / generative expand į vertikalų 9:16 — pridėk lubų viršuje + grindų apačioje, kad išlaikytum TĄ PAČIĄ sofą/žemėlapį/staliuką/lempą/palmes). NE nauja kita scena — TA PATI, tik iš toliau ir vertikaliai. Įrankio pasirinkimas tavo — svarbu rezultatas.
+3. **IŠTRINK seną portretinį vaizdą** ir bet kokį seną portretinį promptą — kad neliktų pėdsako. Naujas failas tuo pačiu vardu `t1-r1-living-room_portrait.webp`.
+4. Perdaryk portretinius fokuso taškus (hitbox'us) naujam vaizdui.
+
+**Flux prompt (jei generuoji iš naujo, ne img2img) — portretas 1080×1920, iš toliau:**
+```
+A bright, airy Scandinavian modern living room interior, professional interior-design photograph, vertical 9:16 composition shot from further back with a wide angle so the ENTIRE room and every object is fully within the frame with generous margins. Centered: a warm taupe fabric sofa with a soft throw blanket. Directly above the sofa on a beige plaster wall: a large framed vintage world map in a slim wooden frame. In front of the sofa: a low wooden oval coffee table with a few ceramic cups and a small vase. Far left: a designer table lamp on a light wooden sideboard casting a warm soft glow, and a tall lush potted palm. Far right: a second tall lush potted palm in a woven basket. A sheer-curtained window on the left lets in soft warm morning light. A decorative ceramic plate on a shelf in the upper area, a small woven mat on the floor, and a single exposed wooden ceiling beam across the top. The lower-center is kept calm and uncluttered (clean rug/floor) for the game UI. Same furniture, colors and lighting as the reference — just seen from further away and vertical. Hyper-detailed, 8k, cinematic warm lighting, photorealistic.
+Negative: cropped objects at edges, different room, extra furniture, text, letters, watermark, people, brand logos, clutter in the lower-center.
+```
+
+**Priėmimo kriterijus:** pasukus telefoną PORTRETAS ir LANDSCAPE rodo TĄ PAČIĄ sceną (ta pati sofa, žemėlapis, staliukas, lempa, dvi palmės) — skiriasi tik kadras (portretas iš toliau). Nė vieno daikto neapkirpta. Seno portretinio vaizdo NEBĖRA.
+
+Po šito → UI responsive reflow (žr. žemesnę žinutę), tada duosiu Virtuvės (R2) prompt'ą. Grąžink su abiem vaizdais (portretas + landscape).
+
+---
+
+
 ## 2026-07-24 — 🔄 TAISYK: ATRAKINK orientaciją + landscape su LANDSCAPE vaizdu (savininkas nori sukti)
 
 Savininkas: „portretas gražiai, BET telefonas visai nesisuka — noriu pasukti ekraną." Portrait-lock NETINKA — jis nori rotacijos, ir kad landscape atrodytų gerai (ne senoji katastrofa su juostomis).

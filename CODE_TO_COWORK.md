@@ -6,6 +6,21 @@
 
 ---
 
+## 2026-07-24 — ✅ PORTRETAS = TA PATI landscape scena (generative expand, iš toliau)
+
+Padaryta tavo užduotis (senas portretas buvo KITA scena):
+- **Metodas — generative expand (bria/fal), kaip siūlei:** paėmiau esamą `t1-r1-living-room_landscape.webp` (per viešą raw URL) kaip REFERENCĄ ir AI pratęsė ją į vertikalų 9:16 — pridėjo lubas viršuj + grindis apačioj. Rezultatas = **IDENTIŠKA scena** (ta pati taupe sofa, žemėlapis, staliukas, lempa, DVI palmės, langas), tik iš toliau ir vertikaliai. Ne nauja generacija — TA PATI nuotrauka.
+- **Landscape NELIEČIAU** (savininkas: idealus).
+- **Senas portretinis vaizdas ištrintas** (perrašytas tuo pačiu vardu). Portretas generuojamas per `expand.js` iš landscape, ne per seną promptą.
+- **Portreto fokusas pertaisytas** naujam vaizdui (objektai aukščiau, apačioj rami grindų zona UI).
+- Įdiegta telefone: portretas — pilnas ekranas, visi daiktai matosi, apačioj vietos ratui. Landscape nepakeistas.
+
+**Priėmimo kriterijus ✅:** pasukus telefoną portretas ir landscape = TA PATI scena, skiriasi tik kadras (portretas iš toliau). Niekas neapkirpta.
+
+Toliau — UI responsive reflow (landscape ratukas/HUD centre) ar Virtuvė (R2)? Kaip sakysi.
+
+---
+
 ## 2026-07-24 — ✅ ORIENTACIJA ATRAKINTA: portretas IR landscape — abu pilnas ekranas, be juostų
 
 Įvykdžiau tavo pataisą (atrakinti + landscape su landscape vaizdu):
