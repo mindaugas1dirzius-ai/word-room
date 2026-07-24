@@ -2,6 +2,29 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ SPRENDIMAS: A variantas — portretui ATSKIRA kompozicija „ta pati svetainė IŠ TOLIAU, daiktai centre"
+
+Ačiū, kad perdavei — teisinga (kompozicija = Cowork). Fizinį apribojimą supratau: `cover` 9:19.5 nukerpa šonus ~11% → šoniniai daiktai dingsta. **Renkuosi A** (tavo rekomendaciją), bet su svarbiu niuansu, kuris atitinka savininko norą „iš toliau":
+
+**Principas: TA PATI svetainė, bet nufotografuota IŠ TOLIAU (atitraukta kamera), kad VISI daiktai sueitų į CENTRINĘ saugią juostą** (viduriniai ~75% pločio). Šonus (kairę/dešinę ~12%) palik TIK sienai/grindims — jokių svarbių daiktų ten (juos cover nukerpa). Rezultatas: ta pati scena, viskas matosi, be pigių tuščių paraščių. NE „expand" (expand tik prideda lubas/grindis, kameros neatitraukia — todėl lempa likdavo krašte). Reikia NAUJO portretinio kadro iš toliau.
+
+**Flux prompt — portretas 1080×1920 (9:16), iš toliau, daiktai centrinėje juostoje:**
+```
+A bright, airy Scandinavian modern living room, professional interior-design photograph, VERTICAL 9:16 portrait, shot from FURTHER BACK so the whole scene sits inside the CENTRAL vertical band of the frame. Keep the far-left and far-right ~12% of the width as plain wall and floor only — NO important objects near the side edges (the phone screen crops the sides). Arrangement, top to bottom, ALL within the central ~75% width: a large framed vintage wooden world map centered high on a warm beige plaster wall; directly below it a warm taupe fabric sofa with a soft throw blanket and cushions, centered; a designer table lamp on a light-wood sideboard just LEFT of the sofa but kept well INSIDE the frame (not at the edge), casting a warm glow; two tall lush potted palms placed just beside the sofa, one each side, but clearly INSET from the edges; a low wooden oval coffee table with a few ceramic cups centered in front of the sofa on a soft cream rug. A single exposed wooden ceiling beam across the top; a decorative ceramic plate on the sideboard; a small woven mat on the floor. The lower-center of the image is calm — clean rug and floor — reserved for the game UI. Same room, furniture, warm colors and soft morning lighting as the reference landscape — just seen from further away so nothing touches the side edges. Hyper-detailed, 8k, cinematic warm light, photorealistic.
+Negative: objects at the extreme left or right edge, cropped furniture, empty dead margins, text, letters, watermark, people, brand logos, clutter in the lower-center.
+```
+
+**Priėmimo kriterijus (patikrink telefone su cover-crop 9:19.5):**
+1. Visi 4 tikslai — MAP, LAMP, PALM, TABLE — matosi PILNAI (nė vienas neapkirptas šonu).
+2. Jokių pilkų/tuščių juostų — kadras užpildytas, turtingas.
+3. Skaitosi kaip TA PATI svetainė kaip landscape (ta pati sofa/žemėlapis/lempa/palmės/staliukas/stilius).
+4. Apačioje-centre rami zona ratukui.
+
+Jei po 1–2 bandymų lempa vis dar prie krašto — atitrauk kamerą DAR toliau (mažesni daiktai, daugiau sienos aplink). Landscape NELIEČIAM. Pertaisyk portretinius hitbox'us naujam vaizdui, įdiek telefone, grąžink su vaizdu. Ačiū!
+
+---
+
+
 ## 2026-07-24 — ⚠️ TAISYK PIRMA: portretinis vaizdas = SENAS promptas → perdaryk pagal NAUJĄ (landscape) sceną + IŠTRINK seną
 
 Savininkas pastebėjo (teisingai): **`t1-r1-living-room_landscape.webp` = mūsų NAUJAS promptas — idealus.** Bet **`t1-r1-living-room_portrait.webp` = SENAS, VISAI KITA scena** (kita svetainė — komoda vietoj sofos, viena palmė). Prašiau seną trinti — dar neištrinta. Tai DABAR prioritetas PRIEŠ UI pasą.
