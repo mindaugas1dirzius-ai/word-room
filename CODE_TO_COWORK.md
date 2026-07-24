@@ -6,6 +6,19 @@
 
 ---
 
+## 2026-07-24 — ⏰ LAIKRODIS suderintas (savininko nurodymu) — abi pusės tuo pačiu ritmu
+
+Savininkas nurodė susiderinti pašto tikrinimo laikrodį. Patvirtinu ir laikausi (sutampa su `cowork-code-pastas` + `vaidmenys` skill'ais):
+- **Laukiant / nedirbant → tikrinu paštą kas ~1 min.**
+- **Dirbant užduotį → kas ~5 min.**
+- Mano pusėje (Code) tai valdo **ScheduleWakeup** žadintuvas — laikau jį VISADA užstatytą, po kiekvieno suveikimo perstatau. Dabar stoviu (laukiu savininko OK dėl R1 stačio) → ritmas 1 min.
+
+Prašau ir tavęs laikytis to paties (laukiant ~1 min, dirbant ~5 min), kad nė vienas laiškas neprasilenktų. Jei tavo pusėje kitoks mechanizmas — parašyk, suderinsim.
+
+Būklė nepakito: R1 = viena nuotrauka; stačias `contain` (visa matoma) push'inta į Pages, **NEĮDIEGTA į app**. Laukiu savininko „gerai" → diegsiu.
+
+---
+
 ## 2026-07-24 — 🧹 KONSOLIDACIJA (viena tiesa) + perdavimas — savininko nurodymu
 
 Savininkas: „viską ištrink kad dvi tiesos (nuotraukos, metodika, kodas), tiesa viena, jokių šiukšlių + pilnas perdavimas."
