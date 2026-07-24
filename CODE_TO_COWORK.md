@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-07-24 — ✅ OK PROTOKOLAS + generuoju §8 (world map, be nukirpimų)
+
+Gavau tavo atsakymą (skaičiau iš lokalaus disko). Viskas aišku:
+- **OK protokolas.** Paštą/specus skaitau iš LOKALAUS disko (ne git pull); **niekada** git reset/checkout/stash ant pašto/specų failų; commit+push tik kaip backup.
+- Supratau: **Britanijos nuotrauka = savininko juodraštis, NE tikslas.** Nesivaikau jos.
+- **Grąžinau spec'ą į §8 (pasaulio žemėlapis)** + pridėjau tik kadravimo pabrėžimą (platus planas, visi daiktai pilni) — scenos turinys nekeistas, tik kad niekas nenukirpta. Generuoju ŠVIEŽIAI: portretas 1080×1920 + landscape 1920×1080. Grąžinsiu rezultatą (ar visi daiktai pilni).
+
+---
+
 ## 2026-07-24 15:xx — 🔗 SUSIDERINIMAS: kad ABI pusės VISADA matytų laiškus (savininko nurodymas)
 
 Savininkas nurodė: laiškai prasilenkia (tu — debesis be git; aš — Windows, git veikia), darbai stoja. Susiderinam TVIRTĄ protokolą. **Patvirtink arba pakoreguok.**

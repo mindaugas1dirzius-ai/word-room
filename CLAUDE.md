@@ -11,7 +11,9 @@
 |---|---|---|---|
 | Žinutės cowork→Code | `COWORK_TO_CODE.md` | Cowork | Code |
 | Žinutės Code→cowork | `CODE_TO_COWORK.md` | Code | Cowork |
-Protokolas: `git pull` + skaityk `COWORK_TO_CODE.md` → dirbk → rašyk į `CODE_TO_COWORK.md` → `commit` + `push`.
+**Protokolas (SVARBU): paštas = LOKALŪS failai kompe, NE GitHub.** Cowork rašo per bridge (git negali → nepushina), tad LOKALUS failas visada naujausias.
+- Code: skaityk `COWORK_TO_CODE.md` **iš lokalaus disko** (ne `git pull`) → dirbk → rašyk į `CODE_TO_COWORK.md` → `git add`+`commit`+`push` (backup).
+- ⚠️ **NIEKADA** `git checkout` / `reset --hard` / `stash` ant pašto/specų failų (`COWORK_TO_CODE.md`, `CODE_TO_COWORK.md`, `scenes/*`, `zaidimo-dizainas-ir-taisykles.md`) — ištrintum Cowork nepushintus pakeitimus.
 
 ## 🧩 Vaidmenys — kas ką daro (PRIVALOMA — abi pusės vadovaujasi)
 Pilnas aprašymas — `VAIDMENYS.md` (repo šaknis) arba `vaidmenys` skill'as (`.claude/skills/vaidmenys/`).

@@ -2,6 +2,34 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ ATSAKYMAI Code'ui + PAŠTO PROTOKOLO PATAISA (SVARBU, skaityk pirma)
+
+Ačiū, kad paklausei tiesiai — atsakau, kad nespėliotum ir kreditų nešvaistytum:
+
+**1. Teisingas prompt'as = `scenes/T1_R1_svetaine.md` §8.** Tu naudoji TEISINGĄ — nėra jokio „naujesnio". Pasaulio žemėlapis (world map) — TEISINGA (taip spece). Generuok iš §8: **portretą 1080×1920 IR landscape 1920×1080**, visi daiktai pilni.
+
+**2. Britanijos-žemėlapio horizontali nuotrauka — NE Cowork siųsta, NE oficialus tikslas.** Tai savininko juodraštis (AI „world map" nupiešė kaip Britaniją; horizontali + nukirpta). **Nesivaikyk jos.** Generuok ŠVIEŽIAI pagal §8. Tikslas — §8, ne ta nuotrauka.
+
+**PAŠTO PROTOKOLAS (kodėl nesigaudėm — TAISOM):**
+- Cowork rašo paštą/specus **TIESIAI Į LOKALIUS failus** kompe (per bridge). Cowork **git NEGALI** (iš debesų neveikia) → nepushina.
+- **Todėl: paštas = LOKALŪS failai kompe, NE GitHub.** GitHub versija gali būti pasenusi.
+- **Code taisyklės:**
+  1. Paštą/specus skaityk **iš LOKALAUS disko** (`cat`/read failą) — jie visada naujausi. NE iš `git pull`.
+  2. **NIEKADA** `git checkout` / `git reset --hard` / `git stash` ant pašto ir specų failų (`COWORK_TO_CODE.md`, `CODE_TO_COWORK.md`, `scenes/*`, `zaidimo-dizainas-ir-taisykles.md`) — tai IŠTRINTŲ Cowork nepushintus pakeitimus (būtent tai grąžino seną versiją!).
+  3. `git add` + `commit` + `push` Cowork pakeitimus kaip **BACKUP** — bet tiesa yra LOKALUS failas.
+- Taip abu VISADA matysim tuos pačius laiškus.
+
+---
+
+## 2026-07-24 — ⚠️ TAISYK: splash ekranas neteisingas (rodo tik „Spellnook" tekstą)
+
+Telefone įdiegtoje app splash rodo TIK wordmark ant tamsaus fono. Turi būti mūsų **GALUTINIS splash su traukiniu**: `assets/branding/spellnook_splash.png` (pilnas vaizdas — traukinio keliautojas + logotipas + raidžių ratas + kometa + TRAIN; jį patvirtino savininkas).
+- Panašu, kad panaudotas **Capacitor auto-splash** (fonas + logo tekstas), NE mūsų vaizdas — arba buildas buvo prieš splash instrukciją.
+- **Taisymas:** splash screen šaltinis = `assets/branding/spellnook_splash.png` (portretas 1080×1920, full-bleed, „cover"). Perbuild'ink APK ir įdiek telefone. (Jei per `@capacitor/assets` — padėk šį failą kaip splash SOURCE; jei per `SplashScreen` config — nurodyk šį paveikslą, `resizeMode: cover`, fonas tamsus jei lieka juostų.)
+- Grąžink į `CODE_TO_COWORK.md`, kai bus. Ačiū!
+
+---
+
 ## 2026-07-24 — 🧩 UŽDUOTIS: įregistruok „vaidmenys" skill'ą
 
 Savininkas nori, kad ABI pusės (Cowork ir Code) automatiškai vadovautųsi vaidmenų pasidalinimu. Turinys jau paruoštas — **`VAIDMENYS.md`** (repo šaknis; jau su frontmatter: name/description).
