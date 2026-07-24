@@ -2,6 +2,39 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ⚠️ ATŠAUKIU trynimą: NIEKO NETRINK. Tik NAUDOK vieną nuotrauką žaidime
+
+Savininkas patikslino: **NIEKO netrink** — nei kas susiję su šiuo kambariu, nei **traukinio** (splash / naudojamas kitur). Atšaukiu ankstesnį „ištrink visas" nurodymą.
+
+**Daryk vietoj to (be jokio trynimo):**
+1. **Palik VISUS failus vietoj** (landscape webp, portrait webp, traukinys/splash, branding — nieko nešalink).
+2. **Žaidime NAUDOK TIK `t1-r1-living-room_landscape.webp`** (mylimoji gulsčioji). Stray portrait webp tiesiog NENAUDOK (bet NETRINK).
+3. **Viena nuotrauka abiem orientacijom:**
+   - **Gulsčias:** ta nuotrauka per visą ekraną — kaip dabar, NELIESK.
+   - **Stačias:** TA PATI landscape nuotrauka, matoma **VISA / 100% (contain, mažesnė)** ant šviesaus šilto dizainuoto fono + UI aplink (žodžiai viršuje, ratukas apačioje). ⚠️ NE crop-slice (dabar stačiame matosi ~10% — tą taisom į visą matomą).
+4. Jokių generacijų. **NEDIEK** — paruošęs stačio išdėstymą parodyk, laukk savininko „gerai".
+
+Grąžink: „nieko netryniau; žaidimas naudoja tik landscape; stačio išdėstymas paruoštas (nediegtas)". Ačiū.
+
+---
+
+
+## 2026-07-24 — 🗑️ IŠTRINK VISAS kitas nuotraukas — palik TIK VIENĄ (savininko griežtas nurodymas)
+
+Savininkas (griežtai): **ištrink ABSOLIUČIAI visas scenos nuotraukas, palik TIK VIENĄ — `t1-r1-living-room_landscape.webp`** (mylimoji gulsčioji). Jokių kitų kadrų/renderių daugiau.
+
+**Daryk:**
+1. **IŠTRINK** `scenes/t1-r1-living-room_portrait.webp` ir bet kokius kitus tos scenos vaizdus/renderius/senienas. Repo lieka **TIK `t1-r1-living-room_landscape.webp`** (+ specas/JSON).
+2. **VIENA nuotrauka abiem orientacijom:**
+   - **Gulsčias:** ta nuotrauka per visą ekraną — **kaip dabar, idealu, NELIESK.**
+   - **Stačias:** TA PATI `t1-r1-living-room_landscape.webp`, rodoma **VISA (contain, mažesnė)** ant **šviesaus šilto dizainuoto fono** + UI aplink (žodžiai viršuje, ratukas apačioje). NEKURK ir NENAUDOK jokio kito vaizdo. (Plati nuotrauka stačiame negali užpildyti viso aukšto ekrano neapkerpant → todėl contain, visa matoma.)
+3. Jokių generacijų. **NEDIEK** — sugeneravęs/perdaręs išdėstymą parodyk man/savininkui, laukk „gerai".
+
+Grąžink: „ištrinta, liko tik viena; stačio išdėstymas paruoštas (nediegtas)". Ačiū.
+
+---
+
+
 ## 2026-07-24 — ⏸️ STOP (vėl): DAR NEGENERUOK — savininkas tikslina RODYMO būdą
 
 Atšaukiu ką tik duotą „🟢 LEIDIMAS generuok" — **NEGENERUOK dar.** Savininkas parodė pavyzdį (foto svetainė): ta pati plati nuotrauka rodoma **PILNAI matoma** ir plačiam, ir stačiam ekrane (stačiame — viršuje, contain, o apačioj turinys). Nori, kad nuotrauka NIEKADA nebūtų apkirpta — visada matoma pilna.

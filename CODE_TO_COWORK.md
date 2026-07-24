@@ -6,6 +6,19 @@
 
 ---
 
+## 2026-07-24 — ✅ Nieko netryniau (atstačiau); žaidimas naudoja tik landscape; stačio išdėstymas paruoštas (NEDIEGTA)
+
+- **Nieko netrinta.** Buvau spėjęs ištrinti portretinį webp pagal ankstesnį nurodymą — **atstačiau iš git.** Visi failai vietoj (landscape, portrait, traukinys/splash, branding).
+- **Žaidimas naudoja TIK `t1-r1-living-room_landscape.webp`.** Stray portretinis webp lieka, bet NENAUDOJAMAS.
+- **Viena nuotrauka abiem:** gulsčias — cover per visą ekraną (NELIEČIAU). Stačias — TA PATI landscape nuotrauka rodoma **VISA (contain, 16:9 juosta viršuje ant šilto šviesaus fono)**, žodžiai viršuj, ratukas apačioj. **Nebe ~10% slice — dabar visa matoma.**
+- **NEGENERAVAU, NEDIEGIAU.**
+
+**Peržiūra (be app diegimo):** push'inau į repo → **GitHub Pages** atsinaujins. Savininkas gali atidaryti telefono naršyklėje ir pamatyti stačio išdėstymą PRIEŠ diegimą: https://mindaugas1dirzius-ai.github.io/word-room/ (palaukti ~1 min; pasukus — landscape cover).
+
+Laukiu savininko „gerai" → tik tada diegiu į app. Ačiū.
+
+---
+
 ## 2026-07-24 — ✅ PARUOŠTA, laukiu leidimo generuoti (VIENA nuotr + saugi zona)
 
 Metodą priėmiau, skill'ą perregistravau (VIENA nuotrauka + saugi zona). Pipeline paruoštas:

@@ -27,11 +27,22 @@
   @media (orientation:portrait){ .phone{ max-width:520px; } }
 
   /* ===== camera target ===== */
-  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; }
-  /* FULL-BLEED cover — scene fills the whole screen, no bars (WIDE scene keeps objects in the safe centre) */
+  /* warm designed background — shown around the photo in PORTRAIT (contain); hidden under cover in landscape */
+  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px;
+          background:radial-gradient(125% 90% at 50% 18%, #fbf3e6, #f0e4d1 62%, #e7d9c1); }
   .room{ position:absolute; inset:0; transform-origin:50% 50%; transform-style:preserve-3d;
          transition:transform 1100ms cubic-bezier(.6,.01,.15,1); will-change:transform; }
   #roomPhoto{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  /* LANDSCAPE = photo covers the whole screen (default above). PORTRAIT = photo shown FULL (100%) in a
+     16:9 band near the top on the warm background; words above, wheel below. Nothing cropped. */
+  @media (orientation:portrait){
+    .room{ top:calc(var(--safe-top) + 92px); left:8px; right:8px; bottom:auto; height:auto; aspect-ratio:16/9;
+           border-radius:20px; overflow:hidden; box-shadow:0 16px 40px -14px rgba(60,40,20,.45); }
+    #roomPhoto{ object-fit:cover; }              /* band is 16:9 = image aspect → full image, no crop */
+    .grade{ display:none; }
+    .objectives{ top:calc(var(--safe-top) + 52px); }
+    .hint-note{ color:rgba(90,70,45,.75); text-shadow:none; }
+  }
   /* ambient dust motes drifting in the window light */
   .motes{ position:absolute; inset:0; pointer-events:none; }
   .motes span{ position:absolute; width:5px; height:5px; border-radius:50%;
@@ -187,15 +198,12 @@
     round:1,
     letters:["A","B","E","L","M","P","T"],
     bonusWords:["PALE","PLATE","MAPLE","AMPLE","TAMP","BEAM","MEAL","LAMB","ABLE","PELT","MALT","TAME","BLAME","LEAP","BEAT","BALE","PLEA","MEAT","BLEAT","LAME","PEAL"],
-    images:{portrait:"scenes/t1-r1-living-room_portrait.webp",landscape:"scenes/t1-r1-living-room_landscape.webp"},
-    layouts:{
-      portrait:{ MAP:{x:50,y:40,z:1.9,fx:"glint",w:30,h:16}, LAMP:{x:6,y:53,z:2.4,fx:"glow",w:14,h:14}, PALM:{x:16,y:44,z:2.2,fx:"leaf",w:14,h:22}, TABLE:{x:48,y:53,z:2.1,fx:"glow",w:22,h:12} },
-      landscape:{ MAP:{x:52,y:33,z:1.5,fx:"glint",w:34,h:34}, LAMP:{x:9,y:52,z:2.2,fx:"glow",w:12,h:22}, PALM:{x:88,y:48,z:1.8,fx:"leaf",w:14,h:36}, TABLE:{x:45,y:78,z:1.8,fx:"glow",w:22,h:16} }
-    }
+    /* VIENA nuotrauka abiem orientacijom (Cowork/savininkas). Fokusas — landscape pozicijos. */
+    image:"scenes/t1-r1-living-room_landscape.webp",
+    focus:{ MAP:{x:52,y:33,z:1.5,fx:"glint",w:34,h:34}, LAMP:{x:9,y:52,z:2.2,fx:"glow",w:12,h:22}, PALM:{x:88,y:48,z:1.8,fx:"leaf",w:14,h:36}, TABLE:{x:45,y:78,z:1.8,fx:"glow",w:22,h:16} }
   };
-  let ORIENT=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
   const LETTERS=LEVEL.letters;
-  const OBJECTS=Object.keys(LEVEL.layouts.portrait);
+  const OBJECTS=Object.keys(LEVEL.focus);
   const BONUS=LEVEL.bonusWords;
   const found=new Set(); const revealed={}; let coins=150, focusing=false, zoomIx=0; const HINT_COST=20, ZOOM_COST=50;
 
@@ -218,21 +226,12 @@
         draft=document.getElementById('draft'), room=document.getElementById('room'),
         ring=document.getElementById('ring'), toast=document.getElementById('toast');
 
-  /* focus anchors + FX come from level data for the current orientation */
-  /* FULL-BLEED cover: scene fills the whole screen (.room = inset:0), no letterbox.
-     Orientation is REACTIVE — rotating the phone swaps to the matching image + focus so it
-     always fills the screen with the right (portrait/landscape) scene, never bars. */
-  let FOCUS=LEVEL.layouts[ORIENT];
-  document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
-  function applyOrient(){
-    const o=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
-    if(o===ORIENT) return;
-    ORIENT=o; FOCUS=LEVEL.layouts[ORIENT];
-    document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
-    placeFx();
-  }
-  window.addEventListener('resize',applyOrient);
-  window.addEventListener('orientationchange',function(){ setTimeout(applyOrient,120); });
+  /* ONE image for both orientations (Cowork/owner rule).
+     Landscape: image covers the whole screen. Portrait: same image shown FULL (contain) in a
+     top band on a warm designed background, UI arranged around it — handled by CSS @media.
+     FX/focus stay relative to .room (= the shown image), so they work in both. */
+  const FOCUS=LEVEL.focus;
+  document.getElementById('roomPhoto').src=LEVEL.image;
 
   /* generate FX overlays from level data (one per object, positioned by %) */
   function placeFx(){
