@@ -1,5 +1,10 @@
 # CLAUDE.md — projektas „Word Room" (fotorealistiškas žodžių žaidimas)
 
+## ⛔ NAUJOS PRIVALOMOS TAISYKLĖS (savininko nurodymas 2026-07-24 — ABIEM pusėm)
+1. **Jokių fal.ai / mokamų generacijų be savininko AIŠKAUS sutikimo KIEKVIENĄ kartą.** Kreditai riboti — jokių bandymų „iš savęs".
+2. **Nediegti į telefoną NIEKO be savininko patvirtinimo.** Srautas: paruošk → parodyk savininkui pokalbio lange (preview) → jis patvirtina → TIK TADA diegi. Niekada atvirkščiai.
+3. **Viena nuotrauka scenai** — NEdaryti kelių nuotraukų tai pačiai scenai; vieną vaizdą pritaikyti orientacijoms.
+
 > Claude Code šį failą skaito AUTOMATIŠKAI. Universalūs principai — `DARBO_PRINCIPAI.md`.
 
 ## Kas aš (sesijos vaidmuo)

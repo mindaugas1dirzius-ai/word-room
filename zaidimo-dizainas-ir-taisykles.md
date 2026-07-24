@@ -292,7 +292,7 @@ Tikslas: tokia bazė, kad paskui NEREIKTŲ perdaryti. Pilnas matomumas ir kontro
 
 - **Cross-platform pamatas:** HTML5 + Capacitor → tas pats kodas Amazon (Fire), Samsung, Xiaomi, Huawei, Apple, Google. Jokių vienai platformai pririštų sprendimų.
 - **TV valdymas (Amazon Fire TV):** TV neturi lietimo — navigacija pultu (D-pad/žymeklis). Įvestį projektuojam **abstrahuotai** nuo pradžios (lietimas IR pultas), kad TV nereiktų perrašinėti. ⚠️ Sprendimas §21: TV pilnai nuo starto, ar planšetės pirma + TV iškart po to.
-- **Scenos KELIOMS orientacijoms (telefonas portretas · planšetė · TV landscape):** kiekvienai scenai generuojam DVI versijas — **portretą (1080×1920)** IR **landscape (1920×1080)** iš to paties speco (Flux — pigu). Objektai tie patys; layout ir hitbox'ai — per orientaciją. (Alternatyva: vienas platus master + „safe zone" kirpimas.) **UI responsive** — ratukas/HUD/langeliai persidėlioja pagal ekraną (apačia portrete; šonas/apačia landscape), dydžiai adaptuojasi. Viena logika, skirtingi išdėstymai. Statom nuo pradžios.
+- **Ekranas / orientacija (VIENA nuotrauka — GALUTINĖ TIESA):** kiekvienai scenai — VIENA plati nuotrauka. Gulsčias: `cover` per visą ekraną (idealu). Stačias: TA PATI nuotrauka `contain` (VISA matoma, sumažinta) + šviesus dizainuotas fonas; UI persidėlioja (žodžiai viršuj, ratukas apačioj). NEDAROM dviejų versijų, jokių pratęsimų/pakartotinių generacijų. Pilnas metodas — `IRENGINIU_ADAPTACIJA.md`. Statom nuo pradžios.
 - **Našumas (kad NEstriktų) — PRIVALOMA nuo pradžios:**
   - Master vaizdai (Midjourney/Flux/Canva) — dideli; į žaidimą — **auto-optimizuoti WebP** tinkamo dydžio (ta pati kokybė, ~3–5× mažiau).
   - **Lazy loading:** kraunam tik dabartinę sceną, sekančią — fone, senas išmetam iš atminties.
