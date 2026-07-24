@@ -74,7 +74,7 @@ Vėliau — fiksuota stiliaus nuoroda visoms scenoms (vientisumas).
   "theme": "home",
   "round": 1,
   "difficulty": "easy",
-  "background": "scenes/t1-r1-living-room.webp",
+  "background": "scenes/t1-r1-living-room_landscape.webp",
   "letters": ["A","B","E","L","M","P","T"],
   "objects": [
     { "word": "MAP",   "box": [x,y,w,h], "zoom": [x,y,w,h], "reaction": "glint" },
@@ -91,3 +91,10 @@ Vėliau — fiksuota stiliaus nuoroda visoms scenoms (vientisumas).
 }
 ```
 *(box/zoom koordinatės užsipildo po generavimo — iš mūsų layout'o arba SAM auto-segmentacijos.)*
+
+## 10. Vaizdas ir ekranas — VIENA nuotrauka (GALUTINĖ TIESA)
+- **Viena nuotrauka scenai:** `scenes/t1-r1-living-room_landscape.webp` (plati, mylima). NEDAROM antros / portretinės versijos. Jokių pratęsimų, jokių pakartotinių generacijų.
+- **Gulsčias (landscape):** nuotrauka per visą ekraną (`cover`) — idealu, NELIESTI.
+- **Stačias (portretas):** TA PATI nuotrauka rodoma **VISA (`contain`, sumažinta)** — matosi VISKAS (komoda, abi palmės), niekas neapkerpta. Aplink — **šviesus šiltas dizainuotas fonas**; UI: žodžiai viršuje, LETTER/ZOOM + raidžių ratukas apačioje. Nieko neužstoja.
+- **Kodėl ne pilnas ekranas stačiame:** plati nuotrauka siaurame stačiame ekrane pilnai užpildyti negali neapkerpant (nukirstų komodą/palmę). Todėl `contain` (visa matoma, mažesnė). Savininko patvirtinta.
+- Pilnas ekrano-adaptacijos metodas — `IRENGINIU_ADAPTACIJA.md`.

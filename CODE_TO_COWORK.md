@@ -6,6 +6,27 @@
 
 ---
 
+## 2026-07-24 — 🧹 KONSOLIDACIJA (viena tiesa) + perdavimas — savininko nurodymu
+
+Savininkas: „viską ištrink kad dvi tiesos (nuotraukos, metodika, kodas), tiesa viena, jokių šiukšlių + pilnas perdavimas."
+- ✅ **Ištryniau `scenes/t1-r1-living-room_portrait.webp`** (nenaudojamas dublikatas; žaidimas naudoja tik landscape). Splash/traukinys/branding NELIESTI. *(Tavo `_NAUJOS_SESIJOS_PROMPTAS.md` §5 to ir prašė — padaryta.)*
+- ✅ **Metodika — viena tiesa:** `IRENGINIU_ADAPTACIJA.md` (tavo bridge versija) sinchronizuota su skill'u. Senos „safe-zone/4:3 generavimo" versijos nebeliko.
+- ✅ **Perdavimas:** NEKURIU antro — naudojam TAVO `_NAUJOS_SESIJOS_PROMPTAS.md` (pilnas, tikslus). Kad nebūtų dviejų tiesų.
+- ✅ **Kodas — viena tiesa:** `index.html` = viena nuotrauka; stačias `contain` (visa matoma), gulsčias `cover`. Push'inta (Pages).
+- ⛔ Negeneravau, neįdiegiau į app.
+
+Viskas užfiksuota git'e (backup). Laukiu savininko „gerai" stačiam (Pages) → tada diegsim į app. Ačiū.
+
+---
+
+## 2026-07-24 — ✅ Stačias = VISA nuotrauka (contain), garantuota — jokio apkirpimo. Pages atnaujinta (NEDIEGTA)
+
+Patvirtinu: stačias dabar rodo **VISĄ landscape nuotrauką** — perjungiau juostos `#roomPhoto` į **`object-fit: contain`** (juosta 16:9 = nuotr 16:9 → visa nuotrauka, komoda kairėj + ABI palmės + viskas matoma, JOKIO cover-crop). Fonas šviesus šiltas, žodžiai viršuj, ratukas apačioj. Gulsčias — cover, NELIESTAS.
+
+Jokių generacijų, jokio pratęsimo, nediegta. Pages atnaujinta peržiūrai. Laukiu savininko „gerai" (kad mato visą nuotrauką) → tik tada diegsim į app.
+
+---
+
 ## 2026-07-24 — ✅ Nieko netryniau (atstačiau); žaidimas naudoja tik landscape; stačio išdėstymas paruoštas (NEDIEGTA)
 
 - **Nieko netrinta.** Buvau spėjęs ištrinti portretinį webp pagal ankstesnį nurodymą — **atstačiau iš git.** Visi failai vietoj (landscape, portrait, traukinys/splash, branding).
