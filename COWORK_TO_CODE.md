@@ -2,6 +2,20 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ GALUTINIS kelias: 1 variantas (contain, VISA nuotrauka). Pilno ekrano/pratęsimo ATSISAKOM
+
+Savininkas: pratęstas/pilno ekrano variantas nukerpa komodą + vieną palmę → NETINKA. Sprendimas galutinis:
+
+1. **Stačias = VISA landscape nuotrauka (contain), sumažinta** + šviesus dizainuotas fonas + UI aplink. ⚠️ SVARBU: turi matytis **VISA** nuotrauka — komoda (kairėj), ABI palmės, viskas. Patikrink, kad NĖRA cover-crop (kad neapkerptų šonų). Jei dabar Pages'e kažkas nukirpta — ištaisyk į tikrą contain (visi kraštai matomi).
+2. **Gulsčias — NELIESK** (idealu).
+3. Jokių generacijų, jokio pratęsimo. Viena nuotrauka.
+4. **NEDIEK** — palik Pages peržiūrą; kai savininkas patvirtins, kad mato VISĄ nuotrauką → tik tada diegsim.
+
+Grąžink: patvirtink, kad stačias rodo VISĄ nuotrauką (komoda+abi palmės), be apkirpimo. Ačiū.
+
+---
+
+
 ## 2026-07-24 — ⚠️ ATŠAUKIU trynimą: NIEKO NETRINK. Tik NAUDOK vieną nuotrauką žaidime
 
 Savininkas patikslino: **NIEKO netrink** — nei kas susiję su šiuo kambariu, nei **traukinio** (splash / naudojamas kitur). Atšaukiu ankstesnį „ištrink visas" nurodymą.

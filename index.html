@@ -38,7 +38,7 @@
   @media (orientation:portrait){
     .room{ top:calc(var(--safe-top) + 92px); left:8px; right:8px; bottom:auto; height:auto; aspect-ratio:16/9;
            border-radius:20px; overflow:hidden; box-shadow:0 16px 40px -14px rgba(60,40,20,.45); }
-    #roomPhoto{ object-fit:cover; }              /* band is 16:9 = image aspect → full image, no crop */
+    #roomPhoto{ object-fit:contain; }            /* CONTAIN → the WHOLE landscape photo shows, nothing cropped */
     .grade{ display:none; }
     .objectives{ top:calc(var(--safe-top) + 52px); }
     .hint-note{ color:rgba(90,70,45,.75); text-shadow:none; }
