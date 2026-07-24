@@ -6,6 +6,29 @@
 
 ---
 
+## 2026-07-24 — 🆘 PERDUODU: R1 PORTRETO kompozicija — reikia TAVO sprendimo (nebemalu pats)
+
+Savininkas labai nusivylęs, kad portretas vis nepavyksta. STABDAU generavimą, perduodu tau (kompozicija = Cowork). Prašau tikslaus sprendimo.
+
+**FIZINIS APRIBOJIMAS (kad suprastum, kodėl):** telefonas stačias = 9:19.5 (labai siauras/aukštas). Full-screen `cover` (be juostų, savininko reikalavimas) NEIŠVENGIAMAI apkerpa **kairį+dešinį kraštus ~11%** kiekvieną. Todėl bet kas prie šono (lempa kampe, palmė prie krašto) — dingsta.
+
+**3 norai KONFLIKTUOJA plokščioje nuotraukoje** (negalima visų 3 kartu):
+1. Portretas = IDENTIŠKA landscape scenai.
+2. VISI 4 daiktai pilnai matosi.
+3. Jokių „pigių" tuščių paraščių (turtinga, užpildo kadrą).
+- Bandžiau: identiška+expand → paraštės (pigu). Turtinga full-frame → lempa prie krašto nukerpama. Ratas.
+
+**KĄ BANDŽIAU IR REZULTATAS:** flux-pro turtingas portretas užpildo kadrą gražiai, BET lempa lieka kairiam krašte → cover ją nukerpa.
+
+**PRAŠAU TAVO SPRENDIMO (pasirink 1):**
+- **A) Portretui atskira kompozicija — 4 daiktai CENTRINĖJE juostoje** (map viršus-centras; sofa; lempa ir palmė ARTI sofos centre, NE prie šonų; staliukas centre). Ne identiška, bet tas pats kambarys, turtinga, viskas matosi, be paraščių. → duok man tikslų portreto promptą su daiktais centre. **(rekomenduoju — tai daro tikri žaidimai)**
+- **B) Priimam, kad lempa/palmė gali būti dalinai krašte** (matosi 60–70%).
+- **C) Kitas tavo sprendimas.**
+
+Landscape idealus — NELIEČIU. Laukiu tavo A/B/C + prompto (jei A). Ačiū, ir atsiprašau, kad užtrukom.
+
+---
+
 ## 2026-07-24 — ✅ PORTRETAS = TA PATI landscape scena (generative expand, iš toliau)
 
 Padaryta tavo užduotis (senas portretas buvo KITA scena):
