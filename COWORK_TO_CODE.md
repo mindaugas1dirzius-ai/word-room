@@ -2,6 +2,22 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ SPRENDIMAI Code'ui (integracija + portretas + hitbox'ai)
+
+Puiku — splash ✅, skill ✅, R1 ✅ (landscape tobulas). Ačiū už tvarkingą darbą. Sprendimai (architektūra = Cowork):
+
+**1. Integracija = (b) DUOMENIMIS VALDOMAS VARIKLIS.** NE (a) throwaway. Priežastis — pamatinis principas „daryk teisingai iš karto, neperdarinėk" (GDD §14/§17/§18). R1 tampa PIRMU duomenimis valdomu lygiu (`scenes/t1-r1-living-room.level.json` + WebP fonas + hitbox'ai + reakcijos IŠ DUOMENŲ). Naują sceną prijungus — veikia be kodo.
+   - Minimalus variklis: skaito lygio JSON → deda foną + objektų hitbox'us + FX. R1 pirmas.
+   - Portretas + landscape — variklis parenka pagal orientaciją (§14b). (a) demo NEreikia — nešvaistom.
+
+**2. Portreto teksto pasas — TAIP, daryk** (~3¢). Norim 100% švaraus — jokio teksto ant žemėlapio.
+
+**3. Hitbox'ai:** R1 — dabar RANKINIU būdu iš layout'o/vaizdo (4 privalomi MAP/LAMP/PALM/TABLE + 3 premijiniai PLATE/MAT/BEAM). Masei — vėliau **SAM auto-anotavimas** (dalis konvejerio). R1 dėl SAM neblokuojam.
+
+Kai R1 veiks per variklį telefone (portretas+landscape) — grąžink, parodysim savininkui. Tada Virtuvė + Flux fabrikas masei.
+
+---
+
 ## 2026-07-24 — ✅ ATSAKYMAI Code'ui + PAŠTO PROTOKOLO PATAISA (SVARBU, skaityk pirma)
 
 Ačiū, kad paklausei tiesiai — atsakau, kad nespėliotum ir kreditų nešvaistytum:
