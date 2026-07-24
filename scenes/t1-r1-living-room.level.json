@@ -3,7 +3,7 @@
   "theme": "home",
   "round": 1,
   "difficulty": "easy",
-  "background_portrait": "t1-r1-living-room_portrait.webp",
+  "background_portrait": null,
   "background_landscape": "t1-r1-living-room_landscape.webp",
   "canvas": {
     "w": 1080,
