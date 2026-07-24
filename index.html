@@ -125,11 +125,10 @@ body{ font-family:var(--sans); color:var(--ink); background:#2b2724; overflow:hi
 /* ---- wheel ---- */
 .wheelpanel{ position:absolute; z-index:22; display:flex; align-items:center; justify-content:center; }
 .wheel{ position:relative; width:240px; height:240px; touch-action:none; }
-.wheel .ring{ position:absolute; left:50%; top:50%; width:172px; height:172px; transform:translate(-50%,-50%);
-              border:1.5px solid rgba(150,120,85,.4); border-radius:50%; }
+.wheel .ring{ display:none; }   /* no circle outline around the wheel (owner) */
 .wheel svg.link{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:2; }
-.letter{ position:absolute; width:42px; height:42px; margin:-21px 0 0 -21px; border-radius:12px;
-         display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#4f3e2c;
+.letter{ position:absolute; width:48px; height:48px; margin:-24px 0 0 -24px; border-radius:13px;
+         display:flex; align-items:center; justify-content:center; font-size:21px; font-weight:800; color:#4f3e2c;
          background:linear-gradient(180deg,#fffdf8,#f0e7d6); border:1px solid rgba(255,255,255,.95);
          box-shadow:0 4px 9px rgba(90,65,35,.25); z-index:3; cursor:pointer;
          transition:transform .12s, background .12s, box-shadow .12s; }
@@ -157,7 +156,7 @@ body{ font-family:var(--sans); color:var(--ink); background:#2b2724; overflow:hi
   .cwbubble{ left:50%; transform:translateX(-50%); bottom:calc(var(--safe-bottom) + 232px); }
   .plusflash{ left:50%; bottom:calc(var(--safe-bottom) + 232px); }
   /* no frame around the wheel — solid ivory background shows through; raised off the bottom */
-  .wheelpanel{ left:0; right:0; bottom:calc(var(--safe-bottom) + 40px); height:240px;
+  .wheelpanel{ left:0; right:0; bottom:calc(var(--safe-bottom) + 48px); height:240px;
                background:transparent; border:none; }
 }
 
@@ -179,8 +178,7 @@ body{ font-family:var(--sans); color:var(--ink); background:#2b2724; overflow:hi
   .lHleft .ht b,.lHright .ht b{ color:#3a2c1c; }
   .cwbubble{ left:50%; transform:translateX(-50%); bottom:calc(var(--safe-bottom) + 208px); }
   .plusflash{ left:50%; bottom:calc(var(--safe-bottom) + 208px); }
-  .wheelpanel{ left:50%; transform:translateX(-50%); bottom:calc(var(--safe-bottom) + 4px); width:240px; height:240px; }
-  .wheel .ring{ border-color:rgba(255,255,255,.55); }
+  .wheelpanel{ left:50%; transform:translateX(-50%); bottom:calc(var(--safe-bottom) + 8px); width:240px; height:240px; }
 }
 /* portrait puts the 6 helps in .helps grid; landscape uses .lHleft/.lHright wrappers.
    Both reference the SAME .ht nodes moved by JS per orientation. */
@@ -476,7 +474,7 @@ body{ font-family:var(--sans); color:var(--ink); background:#2b2724; overflow:hi
   let order=LEVEL.letters.slice();
   function layout(){
     wheel.querySelectorAll('.letter').forEach(n=>n.remove());
-    const R=66,cx=120,cy=120;
+    const R=84,cx=120,cy=120;
     order.forEach((ch,i)=>{ const a=(-90+i*(360/order.length))*Math.PI/180;
       const x=cx+R*Math.cos(a), y=cy+R*Math.sin(a);
       const el=document.createElement('div'); el.className='letter'; el.textContent=ch;
@@ -484,7 +482,7 @@ body{ font-family:var(--sans); color:var(--ink); background:#2b2724; overflow:hi
   }
   let wDrag=false,picked=[];
   function wpt(e){ const r=wheel.getBoundingClientRect(),t=e.touches?e.touches[0]:e; return {x:(t.clientX-r.left)*(240/r.width),y:(t.clientY-r.top)*(240/r.height)}; }
-  function nearest(p){ let b=null,bd=999; wheel.querySelectorAll('.letter').forEach(el=>{ const d=Math.hypot(el._pt.x-p.x,el._pt.y-p.y); if(d<30&&d<bd){bd=d;b=el;} }); return b; }
+  function nearest(p){ let b=null,bd=999; wheel.querySelectorAll('.letter').forEach(el=>{ const d=Math.hypot(el._pt.x-p.x,el._pt.y-p.y); if(d<34&&d<bd){bd=d;b=el;} }); return b; }
   function line(ex){ const pts=picked.map(el=>el._pt.x+','+el._pt.y); if(ex)pts.push(ex.x+','+ex.y); poly.setAttribute('points',pts.join(' ')); }
   function cw(){ const w=picked.map(el=>el.dataset.ch).join(''); const b=$('cwbubble');
     if(w){ b.textContent=w; b.classList.add('show'); } else b.classList.remove('show'); }
