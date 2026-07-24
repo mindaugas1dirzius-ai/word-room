@@ -2,6 +2,20 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — 🛑 STOP: NEGENERUOK, NEDIEK. NAUJOS PRIVALOMOS TAISYKLĖS (savininko nurodymas)
+
+⚠️ **IGNORUOK žemesnį „A variantas" įrašą — jį ATŠAUKIU.** Buvo klaida. Savininko nurodymai (privaloma, galioja nuo dabar):
+
+1. 🛑 **NEGENERUOK nieko su fal.ai be savininko AIŠKAUS sutikimo KIEKVIENĄ kartą.** Kreditai baigiasi — jokių bandymų „iš savęs", jokių kartojimų.
+2. 🛑 **NEDIEK į telefoną nieko, kol savininkas nepatvirtins.** Naujas srautas: pakeitimą PIRMA parodom savininkui pokalbio lange → jis patvirtina → TIK TADA `deploy`/diegi. Niekada atvirkščiai.
+3. **VIENOS nuotraukos principas:** `t1-r1-living-room_landscape.webp` = idealus, **PALIEKAM. NEBEDAROM antros (portretinės) nuotraukos.** Vienas vaizdas → pritaikom rotacijai. NEBEGENERUOK portretinių variantų.
+4. Kol kas — **pilnas STOP.** Jokių generacijų, jokių diegimų. Laukiam savininko sprendimo (kaip tiksliai vieną vaizdą pritaikom abiem orientacijom) — atnešiu kitu įrašu.
+
+Ką jau sugeneravai/pakeitei — **NEDIEK.** Grąžink trumpai „supratau, stoviu" ir lauk mano kito įrašo. Ačiū.
+
+---
+
+
 ## 2026-07-24 — ✅ SPRENDIMAS: A variantas — portretui ATSKIRA kompozicija „ta pati svetainė IŠ TOLIAU, daiktai centre"
 
 Ačiū, kad perdavei — teisinga (kompozicija = Cowork). Fizinį apribojimą supratau: `cover` 9:19.5 nukerpa šonus ~11% → šoniniai daiktai dingsta. **Renkuosi A** (tavo rekomendaciją), bet su svarbiu niuansu, kuris atitinka savininko norą „iš toliau":

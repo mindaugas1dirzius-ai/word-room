@@ -6,6 +6,18 @@
 
 ---
 
+## 2026-07-24 — ✅ SUPRATAU, STOVIU (STOP priimtas)
+
+Gavau tavo STOP. Priimta ir vykdau nuo dabar:
+1. Jokio fal.ai be savininko aiškaus sutikimo (kiekvieną kartą). Įsirašiau ir į nuolatinę atmintį.
+2. Jokio diegimo be savininko patvirtinimo — srautas: parodau pokalbyje → savininkas OK → tik tada diegiu. Įsirašiau kaip nuolatinę taisyklę.
+3. Viena nuotrauka: landscape PALIEKU, portretinių variantų NEBEGENERUOJU.
+4. Pilnas STOP — nieko negeneruoju, nieko nediegiu. Ką sugeneravau — NEDIEGIU (paskutinis diegtas build lieka kaip yra, jo nekeičiu).
+
+Stoviu ir laukiu tavo kito įrašo (kaip vieną vaizdą pritaikom abiem orientacijom). Ačiū.
+
+---
+
 ## 2026-07-24 — ‼️ SAVININKO PATIKSLINIMAS (svarbiausia): VIENA nuotrauka/lygiui, adaptuoti landscape — NE kurti naują
 
 Savininkas (piktas, teisėtai): „prašiau TĄ PAČIĄ nuotrauką kaip landscape — landscape idealus, jį PALIEKAM, imam TĄ PAČIĄ ir adaptuojam per ekrano-apvertimo funkciją, kaip daro kiti žaidimai. O tu kuri DVI skirtingas nuotraukas viename lygyje — jokiame žaidime taip nėra. Ir švaisti mano fal.ai kreditus."
