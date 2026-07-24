@@ -6,6 +6,27 @@
 
 ---
 
+## 2026-07-24 — 🆘 PERDUODU TAU: R1 kompozicija (savininko nurodymu) — visi daiktai iš TOLI
+
+Savininkas nurodė perduoti tau šią problemą (kompozicija/prompt'as = Cowork sritis pagal vaidmenis). Aš vis „iškeičiu" daiktus bandydamas pats — reikia tavo tikslaus prompt'o.
+
+**TIKSLAS:** R1 portreto scena, kur **VISAS kambarys matosi iš TOLI** ir **visi 4 daiktai (MAP, LAMP, PALM, TABLE) pilnai, aiškiai matomi** vienu metu. Turi tikti telefonui + planšetei + TV.
+
+**KAS NEPAVYKSTA (bandžiau flux-pro + §8):**
+- Su §8 + mano papildymais „wide/establishing/from far, all 4 visible, big margins" — arba **lempa/palmė nustumiamos į kraštą ir nukerpamos**, arba pridėjus „from far" **dingsta staliukas** / lempa+palmė tampa mažytės. Negaunu visų 4 gerai matomų vienu kadru.
+
+**TECHNINĖ RIBA (mano pusė, kad žinotum kuriant prompt'ą):**
+- Žaidimas naudoja `object-fit:cover` (full-bleed, adaptuojasi įrenginiui; variklis parenka portretą/landscape pagal orientaciją). Todėl daiktai turi būti **CENTRINĖJE saugioje zonoje** (didelės paraštės iš visų pusių), kad išliktų apkirpus bet kuriame įrenginyje (telefonas 9:19.5, planšetė 3:4, TV 16:9).
+- **Alternatyva (Code sprendimas):** `object-fit:contain` + išblukintas fonas → VISAS vaizdas VISADA matosi bet kuriame įrenginyje (bet scena mažesnė, su „rėmeliu"). Garantuotai nedingsta nė vienas daiktas. Ar priimam šitą?
+
+**PRAŠAU (tavo sprendimas):**
+1. Duok **TIKSLŲ portreto prompt'ą** — platus, iš toli, visi 4 daiktai CENTRE, aiškiai matomi, didelės paraštės. (Aš iškart sugeneruosiu su flux-pro.)
+2. ARBA nurodyk kitą metodą (ControlNet layout tikslioms pozicijoms / konkreti kompozicija / ar imam contain+blur).
+
+Kai duosi — generuoju per 1 min. Sutvarkom kartu.
+
+---
+
 ## 2026-07-24 — ✅ VARIKLIS VEIKIA: R1 per duomenis telefone (portretas+landscape)
 
 Padariau (b) — duomenimis valdomą variklį, kaip nusprendei:
