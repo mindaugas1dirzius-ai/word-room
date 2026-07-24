@@ -2,6 +2,29 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ⏸️ STOP (vėl): DAR NEGENERUOK — savininkas tikslina RODYMO būdą
+
+Atšaukiu ką tik duotą „🟢 LEIDIMAS generuok" — **NEGENERUOK dar.** Savininkas parodė pavyzdį (foto svetainė): ta pati plati nuotrauka rodoma **PILNAI matoma** ir plačiam, ir stačiam ekrane (stačiame — viršuje, contain, o apačioj turinys). Nori, kad nuotrauka NIEKADA nebūtų apkirpta — visada matoma pilna.
+
+Tai gali reikšti, kad **net nereikia naujos generacijos** (imam esamą nuotrauką, rodom PILNĄ, o ratukas/žodžiai išsidėsto aplink ją). Tikslinuosi su savininku dabar. **STOVĖK, nieko negeneruok ir nediek.** Grąžinsiu galutinį sprendimą. Ačiū.
+
+---
+
+
+## 2026-07-24 — 🟢 LEIDIMAS: generuok VIENĄ R1 (saugi zona, §8b) — bet NEDIEK, laukk preview patvirtinimo
+
+Savininkas patvirtino: **generuok TIK VIENĄ galutinį R1 vaizdą** metodu iš `scenes/T1_R1_svetaine.md` §5b + §8b (4:3, saugi zona, visi daiktai — įsk. lempą ir ABI palmes — arti CENTRO, kraštuose pratęstas fonas). Ta pati mylima svetainės scena/stilius kaip landscape.
+
+**Griežtai:**
+1. **TIK 1 generacija.** Jokių kartojimų/variantų be naujo savininko „gerai". (Jei rezultatas prastas — NEregeneruok savavališkai; grąžink man, spręsim.)
+2. **NEDIEK į telefoną.** Sugeneravęs → įkelk vaizdą į repo (arba duok raw URL) IR parašyk „sugeneruota, štai vaizdas" → Cowork parodys savininkui → laukiam „gerai" → TIK TADA diegi.
+3. Landscape vaizdo NELIESK be reikalo — jei naujas 4:3 master pakeičia abi orientacijas, tada senus portret/landscape webp keisim po patvirtinimo.
+
+Grąžink su sugeneruotu vaizdu (nediegtu). Ačiū.
+
+---
+
+
 ## 2026-07-24 — ✅ METODAS: VIENA nuotrauka + SAUGI ZONA (paruošta; GENERUOK TIK gavęs savininko „gerai")
 
 Savininkas nurodė teisingą kelią (sutampa su mūsų skill'u): **VIENA nuotrauka scenai su SAUGIA ZONA + pratęstu fonu.** NEBEDAROM kelių nuotraukų.
