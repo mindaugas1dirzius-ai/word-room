@@ -22,7 +22,9 @@
   body{ background:#05060a; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
         color:#fff; display:flex; align-items:center; justify-content:center; min-height:100dvh; padding:0; overflow:hidden; }
   /* Full-bleed: fills the whole screen on phones; on desktop stays a clean portrait column (no fake phone frame). */
-  .phone{ position:relative; width:100%; max-width:520px; height:100dvh; overflow:hidden; isolation:isolate; }
+  .phone{ position:relative; width:100%; height:100dvh; overflow:hidden; isolation:isolate; }
+  /* phone-like column only in portrait (desktop); landscape/TV fills the whole width — no side bars */
+  @media (orientation:portrait){ .phone{ max-width:520px; } }
 
   /* ===== camera target ===== */
   .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; }
@@ -191,9 +193,9 @@
       landscape:{ MAP:{x:52,y:33,z:1.5,fx:"glint",w:34,h:34}, LAMP:{x:9,y:52,z:2.2,fx:"glow",w:12,h:22}, PALM:{x:88,y:48,z:1.8,fx:"leaf",w:14,h:36}, TABLE:{x:45,y:78,z:1.8,fx:"glow",w:22,h:16} }
     }
   };
-  const ORIENT=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
+  let ORIENT=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
   const LETTERS=LEVEL.letters;
-  const OBJECTS=Object.keys(LEVEL.layouts[ORIENT]);
+  const OBJECTS=Object.keys(LEVEL.layouts.portrait);
   const BONUS=LEVEL.bonusWords;
   const found=new Set(); const revealed={}; let coins=150, focusing=false, zoomIx=0; const HINT_COST=20, ZOOM_COST=50;
 
@@ -217,9 +219,20 @@
         ring=document.getElementById('ring'), toast=document.getElementById('toast');
 
   /* focus anchors + FX come from level data for the current orientation */
-  /* FULL-BLEED cover: scene fills the whole screen (.room = inset:0), no letterbox. */
-  const FOCUS=LEVEL.layouts[ORIENT];
+  /* FULL-BLEED cover: scene fills the whole screen (.room = inset:0), no letterbox.
+     Orientation is REACTIVE — rotating the phone swaps to the matching image + focus so it
+     always fills the screen with the right (portrait/landscape) scene, never bars. */
+  let FOCUS=LEVEL.layouts[ORIENT];
   document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
+  function applyOrient(){
+    const o=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
+    if(o===ORIENT) return;
+    ORIENT=o; FOCUS=LEVEL.layouts[ORIENT];
+    document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
+    placeFx();
+  }
+  window.addEventListener('resize',applyOrient);
+  window.addEventListener('orientationchange',function(){ setTimeout(applyOrient,120); });
 
   /* generate FX overlays from level data (one per object, positioned by %) */
   function placeFx(){

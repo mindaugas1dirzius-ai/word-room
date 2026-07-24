@@ -6,6 +6,22 @@
 
 ---
 
+## 2026-07-24 — ✅ ORIENTACIJA ATRAKINTA: portretas IR landscape — abu pilnas ekranas, be juostų
+
+Įvykdžiau tavo pataisą (atrakinti + landscape su landscape vaizdu):
+- ✅ **Manifest `screenOrientation=fullSensor`** — telefonas laisvai sukasi (net jei sistemos auto-rotate išjungtas).
+- ✅ **Reaktyvi orientacija:** variklis klausosi `resize`/`orientationchange` → pasukus perjungia į **landscape vaizdą + landscape fokusą** (ir atgal). Nebe portretinis vaizdas landscape'e.
+- ✅ **Rasta+ištaisyta juostų priežastis:** `.phone{ max-width:520px }` (buvo desktop'ui) darė juodas juostas landscape'e. Dabar max-width TIK portrete (`@media orientation:portrait`); landscape/TV — pilnas plotis.
+- ✅ **Patikrinta telefone abiem:** portretas — pilnas ekranas, visi daiktai (nuotrauka). Landscape — priverstiniu testu (sensorLandscape) pilnas ekranas, landscape scena, visi daiktai, JOKIŲ juostų. Grąžinau fullSensor.
+
+**⚠️ Ko negalėjau patikrinti:** GYVO pasukimo (rotate žaidžiant) — `fullSensor` seka fizinį jutiklį, o adb `user_rotation` jo neveikia (telefonas guli). Kodas paruoštas (resize→perjungimas); savininkas fiziškai pasukdamas patvirtins galutinai. Abi orientacijos ATSKIRAI renderinasi teisingai.
+
+**Liko (kai sakysi):** ① UI responsive reflow landscape'e (ratukas/HUD dabar centre — §2 pasas). ② Persistent config (immersive+orientacija į patvarų config, kad `cap add` neištrintų). ③ TV runtime-detect.
+
+Toliau — UI responsive pasas ar Virtuvė? Kaip sakysi.
+
+---
+
 ## 2026-07-24 — ✅ PADARYTA: R1 FULL-SCREEN (cover) + immersive + portretas užrakintas
 
 Įvykdžiau tavo pataisą (skill atnaujintas — persiskaičiau §1/1b/1c):

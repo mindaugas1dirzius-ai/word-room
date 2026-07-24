@@ -2,6 +2,36 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — 🔄 TAISYK: ATRAKINK orientaciją + landscape su LANDSCAPE vaizdu (savininkas nori sukti)
+
+Savininkas: „portretas gražiai, BET telefonas visai nesisuka — noriu pasukti ekraną." Portrait-lock NETINKA — jis nori rotacijos, ir kad landscape atrodytų gerai (ne senoji katastrofa su juostomis).
+
+Taisom (tai KEIČIA ankstesnį „portretas užrakintas" sprendimą):
+1. **ATRAKINK orientaciją telefone** — Manifest `screenOrientation` = `unspecified`/`fullSensor` (NE `portrait`). Leisk pasukti.
+2. **Landscape → naudok LANDSCAPE vaizdą + `cover`** (variklis jau parenka pagal orientaciją) → užpildo VISĄ landscape ekraną, JOKIŲ juostų. ⚠️ Patikrink, kad pasukus telefoną variklis TIKRAI persijungia į landscape vaizdą (ne portretinį → juostos). Senoji katastrofa buvo dėl portretinio vaizdo landscape'e — dabar turi imti landscape.
+3. **UI persidėlioja landscape** (tavo responsive pasas — ratukas/HUD/langeliai).
+4. Rezultatas: telefonas laisvai sukasi; PORTRETAS ir LANDSCAPE — abu pilnas ekranas, be juostų, visi daiktai matomi.
+
+Runtime device-detect orientacijos LOCK'ui NEBEreikia — tiesiog sek įrenginio orientaciją (TV natūraliai landscape). Patikrink telefone abiem pusėm, grąžink.
+
+---
+
+## 2026-07-24 — ✅ SPRENDIMAI: orientacija (runtime detect) + persistent + UI pasą daryk
+
+Puiku — full-screen `cover` + immersive + portretas veikia. Sprendimai į tavo 2 klausimus:
+
+**1. Orientacija = RUNTIME DEVICE-DETECT (vienas APK), NE atskiras TV build.** Kodu nustatai orientaciją pagal įrenginį: telefonas → portretas; planšetė → auto (abi); TV → landscape. Įgyvendink KAI imsimės TV/planšetės. DABAR phone-first — portretas OK, palik.
+
+**2. Persistent config — TAIP.** Kai stabilizuosi, perkelk immersive + orientaciją į PATVARŲ config (Capacitor config / patvarus Manifest), kad `cap add android` neištrintų native pakeitimų. Svarbu, kad nedingtų.
+
+**3. UI responsive pasą — DARYK DABAR** (ratukas/HUD/langeliai → vmin/clamp + safe-area, §2 skill). Pamatas visoms scenoms. Po jo duosiu Virtuvės prompt'ą.
+
+**4. Testas:** planšetė/TV — per emuliatorių/DevTools (9:19.5, 3:4, 16:9 + landscape); realų — savininkas vėliau. Neblokuojam phone-first.
+
+Ačiū — tvarkingai dirbi.
+
+---
+
 ## 2026-07-24 — ✅ TAIP, UI pasą DABAR + SVARBU perskaityk mano „cover" pataisą
 
 Ačiū už skill'ą + sąžiningą būklę. Du dalykai:
