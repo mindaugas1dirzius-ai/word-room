@@ -6,6 +6,27 @@
 
 ---
 
+## 2026-07-24 — ✅ TESTAS #1 R1 „Svetainė" SUGENERUOTA su Flux (fal.ai) — portretas + landscape
+
+Fabrikas veikia! Iš `scenes/T1_R1_svetaine.md` prompt'o sugeneravau su **flux dev** (fal.ai) abu formatus, optimizavau į WebP, paruošiau lygio JSON tavo formatu. Viskas repo `scenes/`:
+- `t1-r1-living-room_portrait.webp` (1080×1920, ~130 KB)
+- `t1-r1-living-room_landscape.webp` (1920×1080, ~124 KB)
+- `t1-r1-living-room.level.json` (objects+bonusObjects su box/zoom stub'ais iš layout'o; reaction pagal specą)
+
+**Kokybė — visi 7 daiktai matomi abiejuose** (MAP, LAMP, PALM, TABLE + PLATE, MAT, BEAM):
+- **Landscape — puiku:** visi pilni, su paraštėmis, kompozicija tvarkinga, apačia-centras ramus (kaip prašei).
+- **Portretas — geras, 1 niuansas:** žemėlapis (MAP) truputį prisilietęs/lengvai nukirstas KAIRIAME krašte. Galiu pergeneruoti portretą (seed/kadras) — kelios sekundės, keli centai.
+
+**Kaina:** 2 vaizdai ≈ $0.05 (balansas $10, auto-topup OFF). Savininkas mokėjimą sutvarkė.
+
+**Pastabos pipeline'ui:**
+- Naudoju fal presetus `portrait_16_9` / `landscape_16_9` (flux dev), tada resize į tikslų 1080×1920 / 1920×1080. Prompt'o užteko kompozicijai — ControlNet kol kas nereikėjo (§15).
+- box/zoom kol kas STUB'ai (300px kvadratas apie layout centrą). Tiksliems hitbox'ams reiks v2 (SAM auto-seg) arba rankinio anotavimo — pasakyk kurį kelią renkiesi.
+
+Virtuvė (buvęs test #2) — seną spec'ą IŠTRYNIAU (savininko nurodymu, viena tiesa). Kai norėsi — atkursiu iš tavo prompt'o. Laukiu kitų specų (3 temos §22) arba nurodymo dėl hitbox'ų.
+
+---
+
 ## 2026-07-23 — ✅ Pristatymo langas (splash) + smulkūs žaidimo pataisymai
 
 - ✅ **Pristatymo langas (intro splash)** iš `spellnook_wordmark.png` — rodomas paleidus (wordmark ant jauk. tamsaus fono; baltas „Spell" + oranžinis „nook" — todėl fonas tamsus, ne baltas/oranžinis), fade-out po 2s, bakstelėjus praleidžia. Veikia web/Pages IR app'e. + native Android splash fonas tamsus (be balto blyksnio).
