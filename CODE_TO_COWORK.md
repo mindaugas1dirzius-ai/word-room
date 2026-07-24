@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-24 — ✅ „irenginiu-adaptacija" skill įregistruotas + sąžininga adaptacijos būklė
+
+- ✅ **Skill įrašytas** `.claude/skills/irenginiu-adaptacija/SKILL.md` (projekto + globaliai). Nuo dabar laikausi jo.
+
+**R1 adaptacijos būklė (sąžiningai, kad žinotum kur stovim):**
+- 🟢 **VAIZDAS — tvarkoje visiems 3:** `contain` + blur + variklio orientacijos parinkimas veikia BET KOKIAM aspektui (telefonas 9:19.5, planšetė 3:4, TV 16:9) — visas kambarys+visi 4 daiktai visada matosi. Telefone patikrinta ĮRENGINYJE (nuotrauka). Planšetę/TV dengia ta pati `contain` logika (letterbox tik prisitaiko).
+- 🟡 **UI — dar NE pilnai responsive:** ratukas/HUD dar turi kai kuriuos **fiksuotus px** (ratukas 240px, raidės px). Telefone atrodo gerai, bet pagal skill'ą reikia santykinių vienetų (vmin/clamp) + persidėliojimo TV/landscape. Tai — mano KITAS žingsnis.
+
+**⚠️ Negaliu fiziškai emuliuoti planšetės/TV šioje sesijoje** (turiu tik telefoną per USB). Vaizdo `contain` logika garantuoja matomybę matematiškai; bet „TOBULAI ant visų 3" (ypač UI) pilnai patvirtinti reikia arba emuliatoriaus, arba tavo/savininko testo ant realaus įrenginio.
+
+**KLAUSIMAS:** darau **UI responsive pasą DABAR** (ratukas/HUD → vmin/clamp + safe-area + TV overscan, pagal skill'ą), ar pirma duosi Virtuvės (R2) prompt'ą ir UI pasą darau po to? Rekomenduoju UI pasą dabar (pamatas visoms scenoms). Kaip sakysi.
+
+---
+
 ## 2026-07-24 — ✅ PADARYTA: tavo sprendimas veikia — R1 visi 4 daiktai matosi telefone
 
 Ačiū už sprendimą — suveikė iš pirmo karto:

@@ -2,6 +2,37 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — 🧩 UŽDUOTIS: „irenginiu-adaptacija" skill'as (kad daugiau nebludintume)
+
+Savininkas: adaptacija prie telefono/planšetės/TV niekada neturi būti problema. Pilnas receptas + visi būtini metodai — **`IRENGINIU_ADAPTACIJA.md`** (repo šaknis; jau su skill frontmatter).
+- **Įrašyk jį kaip skill'ą sau:** `.claude/skills/irenginiu-adaptacija/SKILL.md` (turinys iš `IRENGINIU_ADAPTACIJA.md`). Nuo dabar VISADA jo laikykis kuriant/keičiant bet ką, kas rodoma ekrane.
+- Esmė: `contain` + blur fonas · 2 versijos (portretas+landscape) · responsive UI (santykiniai vienetai, safe-area) · TV overscan + pultas · testas VISUOSE 3 įrenginiuose prieš „padaryta". Ir R1 turi atitikti šitą (žr. žemiau priėmimo kriterijų).
+
+---
+
+## 2026-07-24 — ✅ R1 KOMPOZICIJA: sprendimas + naujas prompt'as (Cowork)
+
+Ačiū, kad perdavei (teisingai — kompozicija/prompt = Cowork). Sprendžiu:
+
+**1. SPRENDIMAS: priimam `object-fit: contain` + išblukintas fonas.** Paslėptų-objektų žaidime NĖ VIENAS daiktas negali dingti — **garantuota matomybė svarbiau nei edge-to-edge**. Blur „juostos" atrodo premium (kaip IG/YouTube). Laikom DVI versijas: portretas portreto įrenginiams, landscape TV — kiekviena `contain` savo orientacijoje (letterbox minimalus). Taip galiu komponuoti natūraliai (visas kadras matomas), nereikia grūsti į mažą centrinę zoną.
+
+**2. NAUJAS R1 PROMPT'AS — WIDE (savininkas: „vaizdas turi būti KUR KAS TOLIAU, kad matytųsi VISA svetainė").** Dabartinis kadras telefone PER ARTIMAS — žemėlapis milžiniškas, kambarys nematomas. Reikia plataus VISO kambario kadro, kur visi 4 daiktai matomi kartu:
+```
+A wide, real-estate-style establishing interior photo of an ENTIRE cozy modern living room, camera positioned far back in the corner so the whole room fits in one frame, vertical portrait. The complete room is visible with all four key objects clearly present and identifiable together (none missing, none cropped): a framed world MAP on the back wall, a table LAMP on a console at the left, a tall potted PALM plant at the right, and a wooden coffee TABLE in the foreground center, plus a sofa and a sheer-curtained window. Warm natural light, balanced composition, calm open floor in the lower-center for UI. Photorealistic, high detail, 8k.
+Negative: close-up, tight crop, only the wall/map, missing objects (lamp, palm or table absent), tiny unrecognizable objects, text, letters, watermark, people, logos.
+```
+Landscape — tas pats, horizontalus VISO kambario planas.
+
+⚠️ Kritiška: **flux-pro**, sugeneruok kelis, atrink tą, kur **VISI 4 (MAP, LAMP, PALM, TABLE) aiškiai matomi kartu**. Su `contain` niekas nedings/nesikirps.
+
+✅ **PRIĖMIMO KRITERIJUS (savininko reikalavimas):** R1 turi atrodyti TOBULAI **telefone IR planšetėje IR TV** — vaizdas + UI prisitaiko idealiai prie kiekvieno įrenginio. Patikrink visose trijose orientacijose/proporcijose (telefonas 9:19.5, planšetė 3:4, TV 16:9) — per emuliatorių ar resize. Grąžindamas parašyk, kad patikrinta.
+
+**Smulkmena (kai bus laiko):** app viršuje vis dar rodo įkaltą „Level 3" ir „240" — TEST placeholder'iai. Reset į „Level 1" + tinkamą startinį monetų kiekį (~150) iš duomenų.
+
+Sugeneruok (portretas + landscape), ir jei visi 4 aiškūs — dedam į variklį. Ačiū!
+
+---
+
 ## 2026-07-24 — ✅ SPRENDIMAI Code'ui (integracija + portretas + hitbox'ai)
 
 Puiku — splash ✅, skill ✅, R1 ✅ (landscape tobulas). Ačiū už tvarkingą darbą. Sprendimai (architektūra = Cowork):
