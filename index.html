@@ -25,8 +25,11 @@
   .phone{ position:relative; width:100%; max-width:520px; height:100dvh; overflow:hidden; isolation:isolate; }
 
   /* ===== camera target ===== */
-  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; }
-  .room{ position:absolute; inset:-12%; transform-origin:50% 50%; transform-style:preserve-3d;
+  .stage{ position:absolute; inset:0; overflow:hidden; perspective:1000px; background:#0c0a0d; }
+  /* blurred fill behind the letterboxed scene (contain) — premium look, no object ever cropped */
+  #roomBg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(34px) brightness(.5); transform:scale(1.18); z-index:0; }
+  /* .room is sized in JS to the image aspect (contain) so the WHOLE scene is visible on any device */
+  .room{ position:absolute; z-index:1; transform-origin:50% 50%; transform-style:preserve-3d;
          transition:transform 1100ms cubic-bezier(.6,.01,.15,1); will-change:transform; }
   #roomPhoto{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   /* ambient dust motes drifting in the window light */
@@ -142,6 +145,7 @@
 
   <div class="phone">
     <div class="stage">
+      <img id="roomBg" alt="">
       <div class="room" id="room">
         <img id="roomPhoto" alt="room">
         <div id="fxLayer" style="position:absolute;inset:0;pointer-events:none;"></div>
@@ -181,19 +185,20 @@
   /* ===== Duomenimis valdomas lygis (scena kraunama iš duomenų, ne įkalta) ===== */
   const LEVEL={
     id:"t1-r1-living-room",
+    round:1,
     letters:["A","B","E","L","M","P","T"],
     bonusWords:["PALE","PLATE","MAPLE","AMPLE","TAMP","BEAM","MEAL","LAMB","ABLE","PELT","MALT","TAME","BLAME","LEAP","BEAT","BALE","PLEA","MEAT","BLEAT","LAME","PEAL"],
     images:{portrait:"scenes/t1-r1-living-room_portrait.webp",landscape:"scenes/t1-r1-living-room_landscape.webp"},
     layouts:{
-      portrait:{ MAP:{x:50,y:30,z:1.6,fx:"glint",w:40,h:28}, LAMP:{x:9,y:42,z:2.3,fx:"glow",w:16,h:16}, PALM:{x:10,y:62,z:2.0,fx:"leaf",w:20,h:26}, TABLE:{x:60,y:88,z:1.8,fx:"glow",w:34,h:16} },
-      landscape:{ MAP:{x:50,y:33,z:1.7,fx:"glint",w:38,h:34}, LAMP:{x:18,y:46,z:2.0,fx:"glow",w:14,h:24}, PALM:{x:88,y:42,z:1.8,fx:"leaf",w:16,h:36}, TABLE:{x:33,y:82,z:1.9,fx:"glow",w:22,h:16} }
+      portrait:{ MAP:{x:50,y:42,z:1.5,fx:"glint",w:34,h:20}, LAMP:{x:13,y:60,z:2.0,fx:"glow",w:16,h:22}, PALM:{x:86,y:58,z:1.8,fx:"leaf",w:18,h:28}, TABLE:{x:38,y:82,z:1.8,fx:"glow",w:26,h:16} },
+      landscape:{ MAP:{x:52,y:33,z:1.5,fx:"glint",w:34,h:34}, LAMP:{x:9,y:52,z:2.2,fx:"glow",w:12,h:22}, PALM:{x:88,y:48,z:1.8,fx:"leaf",w:14,h:36}, TABLE:{x:45,y:78,z:1.8,fx:"glow",w:22,h:16} }
     }
   };
   const ORIENT=(window.innerHeight>=window.innerWidth)?'portrait':'landscape';
   const LETTERS=LEVEL.letters;
   const OBJECTS=Object.keys(LEVEL.layouts[ORIENT]);
   const BONUS=LEVEL.bonusWords;
-  const found=new Set(); const revealed={}; let coins=240, focusing=false, zoomIx=0; const HINT_COST=20, ZOOM_COST=50;
+  const found=new Set(); const revealed={}; let coins=150, focusing=false, zoomIx=0; const HINT_COST=20, ZOOM_COST=50;
 
   /* ---- sound fx (synth, no files) ---- */
   let AC=null;
@@ -216,7 +221,23 @@
 
   /* focus anchors + FX come from level data for the current orientation */
   const FOCUS=LEVEL.layouts[ORIENT];
-  document.getElementById('roomPhoto').src=LEVEL.images[ORIENT];
+  const imgSrc=LEVEL.images[ORIENT];
+  document.getElementById('roomPhoto').src=imgSrc;
+  document.getElementById('roomBg').src=imgSrc;
+  /* CONTAIN: size .room to the image aspect so the WHOLE scene shows on any device (phone/tablet/TV);
+     blurred #roomBg fills the letterbox. FX %-coords stay relative to the image (=.room). */
+  const IMG_AR = ORIENT==='portrait' ? (1080/1920) : (1920/1080);
+  function fitRoom(){
+    const stage=document.querySelector('.stage'), room=document.getElementById('room');
+    const sw=stage.clientWidth, sh=stage.clientHeight;
+    let w=sw, h=sw/IMG_AR;
+    if(h>sh){ h=sh; w=sh*IMG_AR; }
+    room.style.width=w+'px'; room.style.height=h+'px';
+    room.style.left=((sw-w)/2)+'px'; room.style.top=((sh-h)/2)+'px';
+  }
+  fitRoom();
+  window.addEventListener('resize',fitRoom);
+  window.addEventListener('orientationchange',fitRoom);
 
   /* generate FX overlays from level data (one per object, positioned by %) */
   function placeFx(){
@@ -326,6 +347,7 @@
     s.style.left=(58+Math.random()*34)+'%'; s.style.top=(20+Math.random()*55)+'%';
     s.style.animationDuration=(7+Math.random()*6)+'s'; s.style.animationDelay=(Math.random()*8)+'s'; motes.appendChild(s); }
 
+  document.querySelector('.lvl').textContent=' '+LEVEL.round; setCoins();
   placeFx(); renderObjectives(); layout();
 })();
 </script>

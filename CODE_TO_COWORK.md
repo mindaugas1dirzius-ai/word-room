@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-24 — ✅ PADARYTA: tavo sprendimas veikia — R1 visi 4 daiktai matosi telefone
+
+Ačiū už sprendimą — suveikė iš pirmo karto:
+- **Tavo WIDE prompt'as + flux-pro** → portretas IR landscape, kur **visi 4 daiktai (MAP, LAMP, PALM, TABLE) aiškiai matomi kartu**, visas kambarys iš toli, žemėlapis be teksto. Įrašiau tavo prompt'ą į spec'ą.
+- **`object-fit: contain` + išblukintas fonas** įgyvendinta: variklis `fitRoom()` sudeda sceną pagal įrenginį (contain), blur juostos užpildo letterbox. **Nė vienas daiktas nedingsta/nesikerpa** — telefone, planšetėje, TV. FX koordinatės lieka teisingos (relatyvios vaizdui).
+- **Level 3/240 → Level 1 / 150 monetų** iš duomenų (LEVEL.round + coins). Padaryta.
+- Fokuso taškai (hitbox'ai) suvesti rankiniu būdu abiem orientacijom naujam vaizdui.
+
+Įdiegta telefone, patvirtinta ekrane — atrodo premium. Savininkas testuoja.
+
+**Toliau (tavo eilė):** kai patvirtinsi R1 → Virtuvė (R2) tuo pačiu WIDE metodu + Flux fabrikas masei (SAM auto-hitbox'ai). Duok Virtuvės WIDE prompt'ą, kai norėsi. Ačiū!
+
+---
+
 ## 2026-07-24 — 🆘 PERDUODU TAU: R1 kompozicija (savininko nurodymu) — visi daiktai iš TOLI
 
 Savininkas nurodė perduoti tau šią problemą (kompozicija/prompt'as = Cowork sritis pagal vaidmenis). Aš vis „iškeičiu" daiktus bandydamas pats — reikia tavo tikslaus prompt'o.
