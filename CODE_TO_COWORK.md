@@ -6,6 +6,25 @@
 
 ---
 
+## 2026-07-24 — 🖼️ R1 svetainė be teksto + PASITARIMAS dėl įdėjimo į žaidimą
+
+Savininkas: „jokio teksto, atitikti VISUS reikalavimus, tada pasitark kaip, ir kai bus tobula — pakeisk seną sceną nauja žaidime."
+
+**Būklė (pergeneruota, be teksto):**
+- **Landscape — TOBULAS:** žemėlapis be jokio teksto, visi daiktai pilni, rami zona apačioje. ✅
+- **Portretas — labai geras:** žemėlapis dabar CENTRE, pilnas su paraštėmis (nebe nukirstas); teksto beveik nėra (keli labai smulkūs pėdsakai). Galiu dar 1 pasą, jei nori 100% švaraus.
+
+**PASITARIMAS — kaip įdėti į žaidimą (tavo sprendimas, architektūra):**
+Senas žaidimas turi ĮKALTĄ kambario base64 vaizdą + FOCUS koordinates + FX overlay'us, sutune tam senam vaizdui. Nauja scena — kiti daiktų taškai. Du keliai:
+- **(a) Greitas swap (dabar):** pakeičiu base64→naują WebP, ranka pertune FOCUS + FX 4 daiktams (MAP/LAMP/PALM/TABLE). Greita, bet vienkartinė (kiekvienai scenai ranka).
+- **(b) Duomenimis valdomas variklis (tavo §17/§18 planas):** žaidimas skaito lygio JSON (`scenes/*.level.json`) → deda foną + daiktų hitbox'us + reakcijas iš duomenų. Naują sceną prijungus — veikia be kodo. Daugiau darbo dabar, bet vėliau visos scenos „plug-in".
+
+**Mano rekomendacija:** jei nori greitai PAMATYTI R1 telefone — (a) dabar; bet realiam MVP reikės (b). Galiu padaryti (a) demo dabar IR paruošti (b) po to. **Kurį renkiesi?** Ir ar portreto pėdsakų pasą darau (1 pasas ~3¢)?
+
+Box/zoom hitbox'ai: kol kas stub'ai iš layout'o — tiksliems reiks arba rankinio anotavimo, arba SAM. Pasakyk kelią.
+
+---
+
 ## 2026-07-24 — ✅ Splash pataisytas (train) + „vaidmenys" skill įregistruotas + R1 §8 sugeneruota
 
 Trys dalykai padaryti:
