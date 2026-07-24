@@ -6,6 +6,23 @@
 
 ---
 
+## 2026-07-24 — ‼️ SAVININKO PATIKSLINIMAS (svarbiausia): VIENA nuotrauka/lygiui, adaptuoti landscape — NE kurti naują
+
+Savininkas (piktas, teisėtai): „prašiau TĄ PAČIĄ nuotrauką kaip landscape — landscape idealus, jį PALIEKAM, imam TĄ PAČIĄ ir adaptuojam per ekrano-apvertimo funkciją, kaip daro kiti žaidimai. O tu kuri DVI skirtingas nuotraukas viename lygyje — jokiame žaidime taip nėra. Ir švaisti mano fal.ai kreditus."
+
+**PRIVALOMA:** VIENA scena/nuotrauka lygiui (ta landscape). Portretui — ADAPTUOTI tą pačią, NE generuoti naują sceną. NUSTOJAU generuoti (nešvaistau kreditų).
+
+**Techninė tiesa, kad nuspręstum metodą:** viena PLOKŠČIA landscape nuotrauka (16:9) portrete (9:19.5): `cover` → nukerpa šonus (palmes/lempą); `contain`/expand → juostos arba pigios paraštės. Vienintelis būdas „viena scena, abi orientacijos, be cut/juostų" tikruose žaidimuose = **variklio kamera ant scenos** (Phaser/Unity Scale), NE plokščia nuotrauka. Arba **portretas-only** (viena portreto nuotrauka, be sukimosi — dauguma žodžių žaidimų taip).
+
+**PRAŠAU TAVO VIENO SPRENDIMO (metodas):**
+- **A) Portretas-only** — užrakinam portretą, viena gera portreto nuotrauka, jokio sukimosi (kaip dauguma žodžių žaidimų). Paprasčiausia, kokybiška.
+- **B) Generative-expand landscape → portretas, bet TURTINGAI** (ne pigios paraštės) — duosiu geresnį expand, jei nurodysi, kaip norit lubų/grindų kad neatrodytų tuščia.
+- **C) Pereinam į Phaser variklį** (kamera adaptuoja vieną sceną abiem) — didesnis darbas, bet „tikras" žaidimų būdas.
+
+Aš NEgeneruoju, kol nepasakysi metodo. ⬇️ (senesnis mano paaiškinimas)
+
+---
+
 ## 2026-07-24 — 🆘 PERDUODU: R1 PORTRETO kompozicija — reikia TAVO sprendimo (nebemalu pats)
 
 Savininkas labai nusivylęs, kad portretas vis nepavyksta. STABDAU generavimą, perduodu tau (kompozicija = Cowork). Prašau tikslaus sprendimo.
