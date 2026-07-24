@@ -1,0 +1,157 @@
+{
+  "id": "t1-r1-living-room",
+  "theme": "home",
+  "round": 1,
+  "difficulty": "easy",
+  "background_portrait": "t1-r1-living-room_portrait.webp",
+  "background_landscape": "t1-r1-living-room_landscape.webp",
+  "canvas": {
+    "w": 1080,
+    "h": 1920
+  },
+  "letters": [
+    "A",
+    "B",
+    "E",
+    "L",
+    "M",
+    "P",
+    "T"
+  ],
+  "objects": [
+    {
+      "word": "MAP",
+      "box": [
+        150,
+        450,
+        300,
+        300
+      ],
+      "zoom": [
+        150,
+        450,
+        300,
+        300
+      ],
+      "reaction": "glint"
+    },
+    {
+      "word": "LAMP",
+      "box": [
+        150,
+        1000,
+        300,
+        300
+      ],
+      "zoom": [
+        150,
+        1000,
+        300,
+        300
+      ],
+      "reaction": "lightUp"
+    },
+    {
+      "word": "PALM",
+      "box": [
+        710,
+        900,
+        300,
+        300
+      ],
+      "zoom": [
+        710,
+        900,
+        300,
+        300
+      ],
+      "reaction": "sway"
+    },
+    {
+      "word": "TABLE",
+      "box": [
+        280,
+        1350,
+        300,
+        300
+      ],
+      "zoom": [
+        280,
+        1350,
+        300,
+        300
+      ],
+      "reaction": "bounce"
+    }
+  ],
+  "bonusObjects": [
+    {
+      "word": "PLATE",
+      "box": [
+        670,
+        470,
+        300,
+        300
+      ],
+      "zoom": [
+        670,
+        470,
+        300,
+        300
+      ],
+      "reaction": "shine"
+    },
+    {
+      "word": "MAT",
+      "box": [
+        680,
+        1510,
+        300,
+        300
+      ],
+      "zoom": [
+        680,
+        1510,
+        300,
+        300
+      ],
+      "reaction": "ripple"
+    },
+    {
+      "word": "BEAM",
+      "box": [
+        390,
+        100,
+        300,
+        300
+      ],
+      "zoom": [
+        390,
+        100,
+        300,
+        300
+      ],
+      "reaction": "dust"
+    }
+  ],
+  "bonus": [
+    "PALE",
+    "MAPLE",
+    "AMPLE",
+    "LAMB",
+    "ABLE",
+    "TAME",
+    "MEAL",
+    "LEAP",
+    "MALT",
+    "PELT",
+    "BALE",
+    "BLAME",
+    "LAME",
+    "PEAL",
+    "PLEA",
+    "TAMP",
+    "BEAT",
+    "MEAT"
+  ]
+}

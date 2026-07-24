@@ -265,10 +265,11 @@ Skaičiai sudėti taip, kad uždarbis būtų LĖTAS, o pagalbos — brangios; ta
 
 ---
 
-## 13. Onboarding
+## 13. Onboarding + intro pristatymas
 
-- Pirmas lygis — vedamas: „rask lempą", parodyk kaip braukti raides, kaip veikia zoom/reakcija.
-- Be teksto sienų; mokoma darant.
+- Pirmas lygis — vedamas RANKA: parodo kaip žaisti (ranka veda → paspaudi → matai reakciją). Be teksto sienų; mokoma darant.
+- **Intro „pristatymas" (video, ~15–20 s), storyboard:** logotipas → „explore beautiful places" (įvažiuoja scena) → „find hidden objects" (didinamasis stiklas juda, daiktas pašviesėja) → „spell what you find" (raidės susijungia, daiktas sureaguoja + monetos) → „travel the world" (žemėlapis) → logotipas + „find · spell · explore".
+- **Gamyba (SPRENDIMAS: A):** intro daromas iš **REALAUS žaidimo įrašo** po to, kai bus žaidžiama app — kad atrodytų profesionaliai (ne maketas). Homemade animacija atmesta (per pigu).
 
 ---
 
@@ -291,7 +292,15 @@ Tikslas: tokia bazė, kad paskui NEREIKTŲ perdaryti. Pilnas matomumas ir kontro
 
 - **Cross-platform pamatas:** HTML5 + Capacitor → tas pats kodas Amazon (Fire), Samsung, Xiaomi, Huawei, Apple, Google. Jokių vienai platformai pririštų sprendimų.
 - **TV valdymas (Amazon Fire TV):** TV neturi lietimo — navigacija pultu (D-pad/žymeklis). Įvestį projektuojam **abstrahuotai** nuo pradžios (lietimas IR pultas), kad TV nereiktų perrašinėti. ⚠️ Sprendimas §21: TV pilnai nuo starto, ar planšetės pirma + TV iškart po to.
-- **Našumas (kad NEstriktų):** lengvi/suspausti vaizdai, optimizuotas piešimas; veikia ir ant silpnų Fire planšečių. Testuojam ant tikro low-end įrenginio.
+- **Scenos KELIOMS orientacijoms (telefonas portretas · planšetė · TV landscape):** kiekvienai scenai generuojam DVI versijas — **portretą (1080×1920)** IR **landscape (1920×1080)** iš to paties speco (Flux — pigu). Objektai tie patys; layout ir hitbox'ai — per orientaciją. (Alternatyva: vienas platus master + „safe zone" kirpimas.) **UI responsive** — ratukas/HUD/langeliai persidėlioja pagal ekraną (apačia portrete; šonas/apačia landscape), dydžiai adaptuojasi. Viena logika, skirtingi išdėstymai. Statom nuo pradžios.
+- **Našumas (kad NEstriktų) — PRIVALOMA nuo pradžios:**
+  - Master vaizdai (Midjourney/Flux/Canva) — dideli; į žaidimą — **auto-optimizuoti WebP** tinkamo dydžio (ta pati kokybė, ~3–5× mažiau).
+  - **Lazy loading:** kraunam tik dabartinę sceną, sekančią — fone, senas išmetam iš atminties.
+  - **Remote scenos (CDN) pagal poreikį** — ne visos supakuotos į app (app lieka lengva, tinka 100+ scenų). Dera su „turinys = plug-in".
+  - **Placeholder/blur** kol kraunasi tikras vaizdas → jaučiasi momentaliai.
+  - **Atminties valdymas** — laisvinam išeinant iš scenos (be crash/lag ant silpnų įrenginių).
+  - **Auto-optimizacijos skriptas** (dalis turinio konvejerio): master → dydis + WebP → žaidimo failas.
+  - Testuojam ant silpniausio įrenginio (Amazon Fire planšetė) — sklandu ten = sklandu visur.
 - **Stebėjimas (matyti VISKĄ):** nuo 1 dienos — **analitika** (kur stringa, kur meta žaisti) + **crash/error reporting** (klaidos realiu laiku). Pvz. Firebase Analytics + Crashlytics ar analogas.
 - **Nuotolinis derinimas (remote config):** ekonomikos skaičius, sunkumą, reklamų dažnį keičiam **be naujo build'o** — reguliuojam gyvai pagal duomenis.
 - **Atnaujinamumas:** lygiai — duomenimis (JSON) → naujus lygius/pataisas tiekiam be pilno resubmit (kur platforma leidžia).
@@ -309,9 +318,24 @@ Bazė, atidirbama VIENĄ kartą → paskui kambarys per minutes:
 5. **Žodžių sprendiklis + temų žodžių bankai** (auto dėlionės).
 6. **Anotavimas:** v1 rankinis įrankis (~3–5 min/kambarys) → v2 auto (SAM + atpažinimas, sekundės).
 
-Po to procesas: tema+sunkumas → sprendiklis duoda žodžius → dėliotojas sudeda sceną → JSON → į lygių aplanką → veikia. Kambarys #10 ir #100 kainuoja vienodai mažai.
+Po to procesas: tema+sunkumas → sprendiklis duoda žodžius → generuojam sceną pagal specą → JSON → į lygių aplanką → veikia. Scena #10 ir #100 kainuoja vienodai mažai.
 
-**Įrankiai:** Canva (kokybė patvirtinta) startui; Flux (kontrolė/vientisumas) ir Firefly (komercinė sauga) — vėliau, jei reikės. Stock (Pexels/Adobe Stock) kaip bazė + adaptacija.
+### Turinys-PIRMA eiga (spec → vaizdas, NE atvirkščiai)
+Specifikuojam lygį PIRMA, tada generuojam BŪTENT tokį vaizdą (ne imam atsitiktinį ir „lipdom aplink"):
+1. **Scenos specas** (Cowork + sprendiklis): tema, tikslūs daiktai, žodžiai/raidės, sunkumas, kompozicija (kas kur, visi pilni kadre, rami zona UI).
+2. **Generuojam pagal specą su KONTROLE:** prompt + ControlNet/layout (daiktai tose vietose) + inpainting (ko trūksta — įpaišom); pergeneruojam kol atitinka.
+3. **Randam daiktų vietas** (iš layout'o arba SAM auto-segmentacija) → hitbox'ai → lygio JSON.
+4. **Auto-optimizacija (WebP)** → į žaidimą.
+
+**Įrankis (PASIRINKTA): Flux per API** (fal.ai/Replicate) — kokybė ~Midjourney, tikras bulk API (100+ automatiškai), ControlNet+LoRA (kontrolė + vientisas stilius), centai/vaizdas, komerciškai saugu. Midjourney — tik keliems hero; Canva — greitiems eskizams; SD+ComfyUI lokaliai — jei nemokamai milžinišku mastu.
+
+### Scenos speco PAVYZDYS (šablonas)
+- **Lygis:** Tema „Namai" · R2 Virtuvė · sunkumas: lengva.
+- **Daiktai (žodžiai):** POT, PAN, CUP, CAN.
+- **Raidžių rinkinys:** A, C, N, O, P, T, U. **Premijiniai:** TACO, PACT, CAP, OAT, NUT, CUT, TAN, ACT…
+- **Kompozicija:** puodas ant viryklės (kairė-vidurys), keptuvė kabo ant sienos (viršus-dešinė), puodelis ant stalo (apačia-kairė), skardinė lentynoje (dešinė) — VISI pilni, su paraštėmis; rami zona centre-apačioje UI. Portretas 1080×1920, šviesi jauki virtuvė, be teksto/logo/žmonių.
+- **Reakcijos:** puodas garuoja, keptuvė blyksteli, puodelis dzinkteli, skardinė pasisuka.
+- **Rezultatas:** vientisas vaizdas + JSON su hitbox'ais.
 
 ---
 
@@ -387,6 +411,10 @@ Reikės: developer paskyrų, ikonos, screenshot'ų, privatumo politikos, pilno �
 - **2026-07-23** Pavadinimas PATVIRTINTA: **Spellnook** (spell + nook; patikrinta — nėra tokio žaidimo/įmonės/TM). Domeną pirkti artimiausiu metu; formali TM patikra prieš paleidimą.
 - **2026-07-23** Konkurencija ištirta: tikslaus hibrido nėra (§1b). PATVIRTINTA unikalūs elementai: „Nook" kolekcija (signature meta), didinamojo stiklo mechanika, gyva scena, dvigubas iššūkis, foto-realizmas.
 - **2026-07-23** Logotipas + pavadinimas PADARYTA: Spellnook logo (`assets/branding/`), užduotis Code'ui — įdiegti programėlę telefone su logotipu (Capacitor Android).
+- **2026-07-23** Brandas: splash — „traukinio keliautojo" koncepcija (logo viršuje + raidės „TRAIN" šone). Intro video — planas A: iš realaus gameplay po app (storyboard §13). Homemade animacija atmesta (per pigu).
+- **2026-07-23** Įrankiai: hero nuotraukos — Midjourney/Flux (premium) ar Canva; intro video montažas — CapCut. Cowork valdo Canva; CapCut/MJ — savininko pusėje (Cowork ruošia promptus/assets/storyboard).
+- **2026-07-23** Asset/našumo pamatas PATVIRTINTA (§14b): master premium → auto-WebP → lazy load → CDN scenos → placeholder → atminties valdymas → testas ant Fire planšetės. Statom nuo pradžios (kad kokybė nevirstų lagais, be perdarymo).
+- **2026-07-23** Turinys-PIRMA (§15): specas (tema+daiktai+žodžiai+kompozicija) → generuojam BŪTENT tokį vaizdą su kontrole (ne atsitiktinis, ne lipdymas). Įrankis PASIRINKTA: **Flux per API** (bulk + kontrolė + vientisumas + pigu). Pridėtas scenos speco pavyzdys (Virtuvė).
 - **2026-07-23** GitHub: viešas repo, Pages nuoroda — https://mindaugas1dirzius-ai.github.io/word-room/
 
 ## 21. Atviri klausimai
