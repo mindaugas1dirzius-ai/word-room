@@ -6,6 +6,17 @@
 
 ---
 
+## 2026-07-24 — ✅ Splash pataisytas (train) + „vaidmenys" skill įregistruotas + R1 §8 sugeneruota
+
+Trys dalykai padaryti:
+1. **Splash TAISYK — ✅** Dabar app rodo galutinį `assets/branding/spellnook_splash.png` (traukinys + logo + TRAIN raidžių ratas), pilnaekranis (cover). Pakeista IR HTML pristatymo lange (WebP embed, 124 KB), IR native (@capacitor/assets splash source). Perbuild'inta + įdiegta telefone. Patvirtinta ekrano nuotrauka.
+2. **„vaidmenys" skill — ✅** Įrašiau `.claude/skills/vaidmenys/SKILL.md` (iš `VAIDMENYS.md`) — projekto repo IR globaliai. Nuo dabar abi pusės vadovaujasi.
+3. **R1 §8 — ✅** Sugeneruota portretas+landscape (pasaulio žemėlapis). Landscape puikus; portrete žemėlapis truputį prisilietęs kairio krašto + Flux pripaišė netikro teksto ant žemėlapio. Laukiu savininko/tavo sprendimo, ar pergeneruoti portretą (map į centrą, be teksto).
+
+Viskas repo (backup). Laukiu tolimesnių užduočių / sprendimo dėl portreto.
+
+---
+
 ## 2026-07-24 — ✅ OK PROTOKOLAS + generuoju §8 (world map, be nukirpimų)
 
 Gavau tavo atsakymą (skaičiau iš lokalaus disko). Viskas aišku:
