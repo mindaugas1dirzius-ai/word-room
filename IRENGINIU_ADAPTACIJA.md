@@ -1,45 +1,42 @@
 ---
 name: irenginiu-adaptacija
-description: Spellnook — kaip padaryti, kad žaidimas (vaizdas + UI) TOBULAI prisitaiko prie telefono, planšetės ir TV. Privalomas metodas, kad daugiadaikčio ekrano adaptacija niekada nebūtų problema. Naudoti kuriant/keičiant sceną, UI, splash ar bet ką, kas rodoma ekrane; PRIVALOMA patikrinti prieš „padaryta".
+description: Spellnook — kaip padaryti, kad žaidimas (vaizdas + UI) TOBULAI prisitaiko prie telefono, planšetės ir TV su VIENA nuotrauka. Metodas: SAUGI ZONA + pratęstas fonas. Naudoti kuriant/keičiant sceną, UI, splash; PRIVALOMA patikrinti prieš „padaryta".
 ---
 
-# Įrenginių adaptacija — privalomas metodas (telefonas · planšetė · TV)
+# Įrenginių adaptacija — VIENA nuotrauka, saugi zona (telefonas · planšetė · TV)
 
-**Principas:** adaptacijos logika parašoma VIENĄ kartą variklyje → paskui KIEKVIENA scena/ekranas prisitaiko automatiškai. Jokio darbo per sceną. Deterministinis kodas (NE AI agentas — jis nepatikimas ir brangus).
+**Auksinė taisyklė:** VIENA nuotrauka scenai (NE kelios). Ji sukomponuojama taip, kad tiktų VISOMS orientacijoms per „saugią zoną" + pratęstą foną. Adaptacijos logika parašoma VIENĄ kartą variklyje → kiekviena scena prisitaiko automatiškai.
 
-## 1. Vaizdo talpinimas — FULL-BLEED (vienas pilnas ekranas)
-- **`object-fit: cover`** — vaizdas UŽPILDO VISĄ ekraną, **JOKIŲ juostų** (savininko reikalavimas: „vienas pilnas ekranas"). NE `contain` (jis palieka juostas — NENAUDOTI).
-- Kad daiktai NEDINGTŲ apkerpant — scenos komponuojamos **WIDE, su visais daiktais CENTRINĖJE saugioje zonoje** (didelės paraštės nuo kraštų). Cover apkerpa tik išorę (sienų/grindų kraštus), ne daiktus.
-- **Dvi versijos:** portretas 1080×1920 (portreto įrenginiai) + landscape 1920×1080 (TV / planšetė landscape). Variklis parenka pagal orientaciją; `cover` užpildo.
+## 1. SAUGI ZONA (Safe Area) — svarbiausia
+- **Visi svarbūs daiktai** (MAP, LAMP, PALM, TABLE + premijiniai + raidžių ratuko vieta) generuojami **centriniame „saugiame" kvadrate** (~1:1, arba centrinė 4:3 zona). NIEKADA prie kraštų.
+- **Pratęstas fonas (extents):** nuotraukos kraštai (grindys, lubos, sienų šonai) generuojami **platesni/aukštesni, nei matys vartotojas.** Keičiantis ekranui, žaidimas rodo daugiau ar mažiau papildomo fono — bet svarbūs daiktai niekada neišeina iš kadro.
+- **Master proporcija:** generuok ~**4:3 arba 16:10**, daiktai sukoncentruoti arti CENTRO, aplink — atsarginis fonas iš visų pusių.
 
-## 1b. Full-screen (immersive) — PRIVALOMA
-- **Paslėpk sistemos juostas** (status bar su laiku/baterija + navigaciją): Capacitor **StatusBar** (`overlaysWebView`/hide) + Android **immersive sticky**. Žaidimas = VISAS ekranas; jokio laiko/baterijos/pilkų juostų.
+## 2. Responsive mastelis (variklis)
+- **Skaičiuok pagal TRUMPĄJĄ kraštinę:** `cover`/`contain` su apribojimais; mastelio „Match" tarp 0 (plotis) ir 1 (aukštis) dinamiškai pagal orientaciją.
+- `cover` užpildo VISĄ ekraną (JOKIŲ juostų) — saugi zona garantuoja, kad daiktai niekada neapkerpami.
+- Tik santykiniai vienetai UI: `vw/vh/vmin/vmax/%`, `clamp()`, flex/grid. JOKIŲ fiksuotų px pozicijų.
 
-## 1c. Orientacijos fiksavimas
-- **Telefonas: LOCK portretas** — pavertus NEsugriūtų (portreto vaizdas juostose = katastrofa). Žodžių žaidimas telefone = portretas.
-- **Planšetė:** abi orientacijos (naudoja atitinkamą vaizdą + `cover`).
-- **TV:** landscape (landscape vaizdas + `cover`).
+## 3. Enkaravimas (jei daiktai — atskiri PNG virš fono)
+- Staliukas/lempa → `Bottom-Left`; žemėlapis → `Top-Center/Top-Left`; palmė → `Right-Center/Bottom-Right`; **ratukas → `Bottom-Center`.**
+- Ekranui tempiantis, objektai „prilimpa" prie kampų, tuščia centro erdvė didėja/mažėja — daiktai proporcijų nepraranda.
 
-## 2. Išdėstymas / UI (responsive)
-- Tik **santykiniai vienetai:** `vw/vh/vmin/vmax/%`, `clamp()`, flexbox/grid. JOKIŲ fiksuotų px pozicijų.
-- **Safe-area insets** (`env(safe-area-inset-*)`) — telefono „notch"/kampams.
-- Ratukas / HUD / langeliai **persidėlioja pagal orientaciją:** portrete — apačioje; landscape/TV — šone arba apačioje, didesni.
-- Testuok proporcijas: telefonas 9:19.5 ir 9:16, planšetė 3:4 ir 4:3, TV 16:9.
+## 4. Orientacijų išdėstymas (portrait ↔ landscape)
+- Variklis reaguoja į orientacijos kaitą (OrientationBuilder / resize):
+  - **Portretas:** ratukas apačioje; daiktai labiau susispaudę į viršų/centrą.
+  - **Landscape / TV:** ratukas gali persikelti į šoną/centrą; daiktai išsisklaido plačiau.
+- Full-screen **immersive** (paslėpta status bar + nav bar) — JOKIO laiko/baterijos/juostų.
 
-## 3. Scale mechanika
-- Dabar: vanilla HTML + CSS (`contain` + responsive) — veikia.
-- Upgrade (jei pereisim į Phaser): **Phaser Scale Manager** (`Scale.FIT` / `RESIZE`) tą daro „iš dėžės".
+## 5. Rezoliucijos klasteriai (planšetė / 4K TV aštrumas)
+- Saugom kelis to paties vaizdo dydžius: **@1x telefonui, @2x planšetei, @3x/4K TV.**
+- Programa pagal DPI/rezoliuciją pati užkrauna reikiamą failą → vaizdas visada aštrus, ne pikseliuotas.
 
-## 4. TV specifika (Fire TV)
-- **Overscan saugi zona:** palik ~5–10% paraštę nuo kraštų (TV nukerpa kampus).
-- **Pulto navigacija:** D-pad/žymeklis; fokuso būsenos; didesni fokuso taškai.
-- Įvesties abstrakcija: lietimas IR pultas — viena logika.
+## 6. Testas prieš „padaryta" (PRIVALOMA)
+- Telefonas 9:19.5 (+pasukus), planšetė 4:3/3:4, TV 16:9 — per emuliatorių/DevTools/resize.
+- Kriterijus: `cover` užpildo, VISI daiktai saugioje zonoje matomi, UI persidėlioja, JOKIŲ juostų.
 
-## 5. Testavimas prieš „padaryta" (PRIVALOMA)
-- Patikrink VISUOSE: telefonas + planšetė + TV (emuliatorius / resize / DevTools).
-- Kriterijus: vaizdas + UI atrodo TOBULAI ir žaidimas pilnai žaidžiamas kiekviename.
-
-## 6. Ko NEDARYTI
-- ❌ Fiksuotų px pozicijų / vieno dydžio dizaino.
-- ❌ `object-fit: cover` be saugios zonos (nukerpa daiktus).
-- ❌ „Pataisysiu vėliau kitam įrenginiui" — statom universaliai IŠ KARTO.
+## 7. Ko NEDARYTI
+- ❌ Kelių/skirtingų nuotraukų tai pačiai scenai (VIENA + saugi zona).
+- ❌ Daiktų prie kraštų (juos apkerpa).
+- ❌ Fiksuotų px / vieno dydžio dizaino.
+- ❌ Generuoti be savininko sutikimo; diegti be savininko patvirtinimo.

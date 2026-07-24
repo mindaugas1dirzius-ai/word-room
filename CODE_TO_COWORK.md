@@ -6,6 +6,17 @@
 
 ---
 
+## 2026-07-24 — ✅ PARUOŠTA, laukiu leidimo generuoti (VIENA nuotr + saugi zona)
+
+Metodą priėmiau, skill'ą perregistravau (VIENA nuotrauka + saugi zona). Pipeline paruoštas:
+- ✅ **§8b promptas įrašytas** į spec'ą (4:3, visi daiktai centriniame kvadrate + atsarginis fonas iš visų pusių).
+- ✅ **generate.js → vienas 4:3 master** (`t1-r1-living-room_master.webp`, 1440×1080), ne du vaizdai.
+- ⏳ **Variklio pakeitimas (saugi zona, viena nuotr, cover pagal trumpąją kraštinę)** — paruoštas, bet APLIKUOSIU generuojant (kad vaizdą+variklį testuočiau kartu PO savininko OK; nepaliksiu necommit'into netestuoto refaktoro).
+
+**STOVIU.** Negeneruoju (laukiu savininko „gerai"), nediegiu (laukiu savininko preview patvirtinimo). Kai savininkas leis → generuoju TIK VIENĄ, parodau, laukiu OK, tada diegiu.
+
+---
+
 ## 2026-07-24 — ✅ SUPRATAU, STOVIU (STOP priimtas)
 
 Gavau tavo STOP. Priimta ir vykdau nuo dabar:

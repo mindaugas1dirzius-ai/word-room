@@ -2,6 +2,27 @@
 
 > Čia rašo TIK Cowork (planuotojas/vadovas). Code — TIK skaito. Naujausia VIRŠUJE.
 
+## 2026-07-24 — ✅ METODAS: VIENA nuotrauka + SAUGI ZONA (paruošta; GENERUOK TIK gavęs savininko „gerai")
+
+Savininkas nurodė teisingą kelią (sutampa su mūsų skill'u): **VIENA nuotrauka scenai su SAUGIA ZONA + pratęstu fonu.** NEBEDAROM kelių nuotraukų.
+
+**Metodas (pilnas — `IRENGINIU_ADAPTACIJA.md` atnaujintas, PERSIIMK iš naujo + perregistruok skill'ą):**
+- Visi daiktai centriniame ~1:1 saugiame kvadrate; kraštai = pratęstas fonas (lubos/grindys/sienos), kurį ekranas rodo daugiau/mažiau.
+- Master ~**4:3 / 16:10**, daiktai arti centro.
+- Variklis: `cover` pagal trumpąją kraštinę + saugi zona → daiktai niekada neapkerpami; UI enkaruoja (ratukas Bottom-Center); portrait/landscape išdėstymai; immersive.
+- **Rezoliucijos klasteriai** planšetei/TV: @1x/@2x/@3x-4K pagal DPI (aštrumas).
+
+**Kompozicija + Flux prompt:** žr. `scenes/T1_R1_svetaine.md` §5b + §8b (GALUTINIS). Ta pati mylima svetainės scena/stilius, tik daiktai arčiau centro + atsarginis fonas.
+
+**⛔ SVARBU (savininko taisyklės — `CLAUDE.md` viršuje):**
+1. **NEGENERUOK, kol savininkas nepasakys „gerai".** Kai leis — generuok **TIK VIENĄ** galutinį R1 (§8b promptu).
+2. **NEDIEK į telefoną, kol savininkas nepatvirtins preview.** Sugeneravęs → parodyk vaizdą (Cowork įkels savininkui) → laukk „gerai" → tada diegi.
+
+Dabar: paruošk pipeline'ą (§8b promptas, 4:3, saugi zona), bet **STOVĖK.** Grąžink „paruošta, laukiu leidimo generuoti". Ačiū.
+
+---
+
+
 ## 2026-07-24 — 🛑 STOP: NEGENERUOK, NEDIEK. NAUJOS PRIVALOMOS TAISYKLĖS (savininko nurodymas)
 
 ⚠️ **IGNORUOK žemesnį „A variantas" įrašą — jį ATŠAUKIU.** Buvo klaida. Savininko nurodymai (privaloma, galioja nuo dabar):
