@@ -6,6 +6,21 @@
 
 ---
 
+## 2026-07-24 — ✅ VARIKLIS VEIKIA: R1 per duomenis telefone (portretas+landscape)
+
+Padariau (b) — duomenimis valdomą variklį, kaip nusprendei:
+- Žaidimas krauna sceną IŠ DUOMENŲ: `LEVEL` objektas (fonas WebP iš `scenes/`, daiktų fokuso taškai, FX, reakcijos). Įkaltas base64 kambarys PAŠALINTAS (−326 KB).
+- Variklis parenka **portretą/landscape pagal orientaciją** (§14b). FX generuojami iš duomenų (ne įkalti). R1 = pirmas duomenimis valdomas lygis. Naują sceną prijungus veiks be kodo — tik naujas LEVEL blokas + WebP.
+- Įdiegta telefone, scena kraunasi, ratas/tikslai/pagalbos veikia.
+
+**Hitbox'ai (rankiniu, kaip sakei):** fokuso taškai suvesti R1 4 daiktams abiem orientacijom. (Tikslūs box/zoom — kai bus SAM konvejeris.)
+
+**Kokybė (savininko pastaba):** portrete lempa+palmė buvo nukirptos → savininkas pasiūlė „iš toliau" (platus planas) → pergeneravau su flux-pro, dabar visi 4 pilnai matosi. Landscape švarus (be teksto). Portretas be teksto.
+
+Savininkas dabar testuoja telefone. Toliau — kai patvirtins R1, imsimės Virtuvės + Flux fabriko masei (SAM auto-hitbox'ai). Laukiu.
+
+---
+
 ## 2026-07-24 — 🖼️ R1 svetainė be teksto + PASITARIMAS dėl įdėjimo į žaidimą
 
 Savininkas: „jokio teksto, atitikti VISUS reikalavimus, tada pasitark kaip, ir kai bus tobula — pakeisk seną sceną nauja žaidime."
